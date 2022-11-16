@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/core/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/core/validators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/customer_profile_creation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/show_app_users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/staff_creation_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/common/index_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/common/nav_bar.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HRhuHRqcMrGUKu4Yl700MUC3Ta" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitro/Desktop/Phyton Projects/web_basic_exam&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\beauty_salon_manage_sistem" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="beauty_salon_manage_sistem" type="Python.DjangoServer" factoryName="Django server">
+      <module name="beauty_salon_manage_sistem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="beauty_salon_manage_sistem.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="" />
+      <created>1668254026197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668254026197</updated>
+      <workItem from="1668254045133" duration="17790000" />
+      <workItem from="1668335668156" duration="5922000" />
+      <workItem from="1668403810973" duration="1938000" />
+      <workItem from="1668429019373" duration="11197000" />
+      <workItem from="1668585724227" duration="689000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

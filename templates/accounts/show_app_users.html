@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for customer in customers %}
+    <li>{{ customer.get_full_name }} {{ customer.email }}</li>
+
+{% endfor %}
+<p>
+    We have {{ customers.count }} customers!
+    </p>
+{% if staffs %}
+    <ul>
+    We have {{ staffs.count }} staffs!
+    </ul>
+    {% else %}
+    <ul>Dont have any staff yet!</ul>
+{% endif %}
+</body>
+</html>
