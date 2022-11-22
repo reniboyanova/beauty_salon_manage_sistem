@@ -1,12 +1,15 @@
 from django.contrib import admin
 
-from beauty_salon_manage_sistem.accounts.models import AppStaffUser, AppCustomerUser
+from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppBaseUser, AppStaffProfile
 
 
-@admin.register(AppStaffUser)
-class AppStaffUserAdmin(admin.ModelAdmin):
+@admin.register(AppBaseUser)
+class AppBaseUserAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(AppStaffProfile)
+class AppStaffProfileAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(AppCustomerUser)
 class AppCustomerUserAdmin(admin.ModelAdmin):

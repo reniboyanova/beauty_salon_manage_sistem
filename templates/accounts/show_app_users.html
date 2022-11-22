@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'common/index_page.html' %}
+{% block content %}
 {% for customer in customers %}
-    <li>{{ customer.get_full_name }} {{ customer.email }}</li>
+    <li>{{ customer.full_name_and_phone_number }}</li>
 
 {% endfor %}
 <p>
-    We have {{ customers.count }} customers!
+    We have {{ customers.count }} customer/s!
     </p>
 {% if staffs %}
     <ul>
@@ -19,5 +14,4 @@
     {% else %}
     <ul>Dont have any staff yet!</ul>
 {% endif %}
-</body>
-</html>
+{% endblock %}

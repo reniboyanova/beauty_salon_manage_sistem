@@ -1,0 +1,9 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    <form method="post" action="{% url 'add procedure to customer' %}">
+        {{ form }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Add procedure</button>
+    </form>
+    <button type="button" class="btn btn-outline-secondary" value="{% url 'add customer' %}">Add Customer</button>
+{% endblock %}

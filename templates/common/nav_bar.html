@@ -17,10 +17,14 @@
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{% url 'register user' %}">Register Customer</a></li>
-            <li><a class="dropdown-item" href="{% url 'register staff' %}">Register Staff</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{% url 'show users' %}">Show users</a></li>
+            <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
+            <li><a class="dropdown-item" href="{% url 'add customer' %}">Add a customer</a></li>
+              <li>
+                  <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="{% url 'add procedure to customer' %}">Add a procedures</a></li>
+
           </ul>
         </li>
         <li class="nav-item">

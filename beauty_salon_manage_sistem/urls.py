@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('beauty_salon_manage_sistem.common.urls')),
     path('accounts/', include('beauty_salon_manage_sistem.accounts.urls')),
-    path('services/', include('beauty_salon_manage_sistem.services.urls')),
+    path('services/', include('beauty_salon_manage_sistem.products.urls')),
     path('procedures/', include('beauty_salon_manage_sistem.procedures.urls')),
 ]

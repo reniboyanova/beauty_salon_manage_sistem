@@ -1,0 +1,16 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    <form method="post" action="{% url 'add customer' %}" >
+
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.gender }}
+        {{ form.phone_number }}
+        {{ form.hair_type }}
+        {{ form.hair_long }}
+        {{ form.choose_hair_stylist }}
+        {{ form.further_explanation }}
+        <button type="submit" class="btn btn-primary">Add</button>
+        {% csrf_token %}
+    </form>
+{% endblock %}

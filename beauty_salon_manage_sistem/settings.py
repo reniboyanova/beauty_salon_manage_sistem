@@ -44,10 +44,12 @@ INSTALLED_APPS = [
     # my apps
     'beauty_salon_manage_sistem.accounts',
     'beauty_salon_manage_sistem.common',
-    'beauty_salon_manage_sistem.services',
+    'beauty_salon_manage_sistem.products',
     'beauty_salon_manage_sistem.procedures',
 
+    # third-party-apps:
     'multiselectfield',
+
 ]
 
 MIDDLEWARE = [

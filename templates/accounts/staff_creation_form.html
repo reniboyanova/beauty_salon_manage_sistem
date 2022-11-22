@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form method="post" action="{% url 'register staff' %}">
-    {{ form }}
+{% extends 'common/index_page.html' %}
+{% block content %}
+<form method="post" action="{% url 'register user' %}">
+    {{ form.email }}
+    {{ form.password1 }}
+    {{ form.password2 }}
+    {{ form.first_name }}
+    {{ form.last_name }}
+    {{ form.position }}
     <button type="submit">Register</button>
     {% csrf_token %}
 </form>
-</body>
-</html>
+{% endblock %}
