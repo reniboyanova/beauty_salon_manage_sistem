@@ -1,9 +1,25 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     <form method="post" action="{% url 'add procedure to customer' %}">
-        {{ form }}
+        {% for field in form %}
+            <div>
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                {% if field.label %}
+                    <ul>{{ field.label }}</ul>
+                {% endif %}
+                <ul>{{ field }}</ul>
+            </div>
+        {% endfor %}
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary">Add procedure</button>
+
+        <ul><button type="submit" class="btn btn-primary">Add procedure</button></ul>
     </form>
-    <button type="button" class="btn btn-outline-secondary" value="{% url 'add customer' %}">Add Customer</button>
+    <div>
+        <ul>
+            <button type="button" class="btn btn-outline-secondary" value="{% url 'add customer' %}">Add Customer
+            </button>
+        </ul>
+    </div>
 {% endblock %}

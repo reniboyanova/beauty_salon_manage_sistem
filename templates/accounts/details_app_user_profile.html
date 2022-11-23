@@ -1,0 +1,8 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+{% if customers %}
+    {{ customers_count }}
+    {% else %}
+    <h3>No customers</h3>
+    {% endif %}
+{% endblock %}

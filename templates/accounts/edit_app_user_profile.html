@@ -1,0 +1,15 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    <!-- Start Edit Profile Section -->
+        <h2>Edit Profile</h2>
+        <!-- Start Edit Profile From -->
+        <form method="post" action="{% url 'edit user' pk=appstaffprofile.pk %}">
+            {{ form.as_p }}
+            <button class="edit-btn" type="submit">Edit</button>
+            {% csrf_token %}
+        </form>
+        <!-- End Edit Profile Form -->
+
+    <!-- End Edit Profile Section -->
+
+{% endblock %}

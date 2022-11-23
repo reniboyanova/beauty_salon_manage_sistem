@@ -2,40 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="first sceleton">
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/adding_customer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/accounts/form_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/procedures/adding_procedure_to_customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/details_app_user_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/edit_app_user_profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/login_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/test_forms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/managers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/customer_profile_creation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/show_app_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/show_app_users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/accounts/staff_creation_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/staff_creation_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/index_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/index_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/adding_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/adding_customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/nav_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav_bar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/procedures/adding_procedure_to_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/procedures/adding_procedure_to_customer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -71,21 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitro/Desktop/Phyton Projects/demo_project_1&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/nitro/Desktop/Phyton Projects/djangoProject/petstagram",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\beauty_salon_manage_sistem" />
@@ -133,7 +113,9 @@
       <workItem from="1668785557885" duration="17082000" />
       <workItem from="1669125854932" duration="11608000" />
       <workItem from="1669137693919" duration="1314000" />
-      <workItem from="1669139027834" duration="3387000" />
+      <workItem from="1669139027834" duration="3696000" />
+      <workItem from="1669143512682" duration="182000" />
+      <workItem from="1669182776676" duration="16204000" />
     </task>
     <task id="LOCAL-00001" summary="first sceleton">
       <created>1668586863314</created>
@@ -142,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668586863314</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first sceleton">
+      <created>1669142633884</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669142633884</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first sceleton">
+      <created>1669142643907</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669142643907</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +149,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

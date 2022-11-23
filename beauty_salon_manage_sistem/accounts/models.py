@@ -28,7 +28,7 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
         profile_full_name = AppStaffProfile.objects.get(pk=self.pk).get_full_name
         if profile_full_name:
             return f'{profile_full_name}'
-        return 'No name'
+        return self.email
 
     def __str__(self):
         return self.get_full_name_with_profile
@@ -117,12 +117,8 @@ class AppCustomerUser(models.Model):
 
     MAX_LEN_FURTHER_EXPLANATION = 250
 
-    hair_stylist = models.ManyToManyField(AppBaseUser)
+    hair_stylist = models.ManyToManyField(AppStaffProfile, verbose_name='Hair stylist:')
 
-    choose_hair_stylist = models.CharField(
-        max_length=300,
-        choices=[('person.get_full_name', person.get_full_name) for person in AppStaffProfile.objects.all()],
-    )
 
     first_name = models.CharField(
         max_length=MAX_LEN_FIRST_NAME,
@@ -132,6 +128,7 @@ class AppCustomerUser(models.Model):
             validators.MinLengthValidator(MIN_LEN_FIRST_NAME),
             validate_only_letters,
         ],
+        verbose_name='First name:',
     )
 
     last_name = models.CharField(
@@ -141,7 +138,8 @@ class AppCustomerUser(models.Model):
         validators=[
             validators.MinLengthValidator(MIN_LEN_LAST_NAME),
             validate_only_letters,
-        ]
+        ],
+        verbose_name='Last name:',
     )
 
     date_of_join = models.DateField(
@@ -154,27 +152,32 @@ class AppCustomerUser(models.Model):
         validators=[validators.MinLengthValidator(MIN_LEN_PHONE_NUMBER), ],
         null=False,
         blank=False,
+        verbose_name='Phone number:',
     )
 
     gender = models.CharField(
         max_length=MAX_LEN_GENDER,
         choices=GENDER_CHOICES,
+        verbose_name='Gender:',
     )
 
     hair_type = models.CharField(
         max_length=MAX_LEN_HAIR_TYPES,
         choices=HAIR_TYPES_CHOICES,
+        verbose_name='Hair type:',
     )
 
     hair_long = models.CharField(
         max_length=MAX_LEN_HAIR_LONG,
         choices=HAIR_LONG_CHOICES,
+        verbose_name='Hair long:',
     )
 
     further_explanation = models.TextField(
         max_length=MAX_LEN_FURTHER_EXPLANATION,
         null=True,
         blank=True,
+        verbose_name='Additional information:',
     )
 
     is_staff = models.BooleanField(default=False, )

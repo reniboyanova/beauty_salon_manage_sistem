@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.core import validators
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
@@ -57,7 +57,7 @@ class RegistrationAppUserForm(UserCreationForm):
 
     class Meta:
         model = UserModel
-        fields = ('email', )
+        fields = ('email',)
         widgets = {
             'email': forms.TextInput(attrs={
                 'placeholder': 'Enter your email',
@@ -96,16 +96,26 @@ class AddingCustomerForm(forms.ModelForm):
         model = AppCustomerUser
         exclude = ('date_of_join', 'is_staff', 'is_superuser',)
         widgets = {
-            'first_name': forms.TextInput(attrs={
-                'placeholder': 'First Name:', 'label': 'Enter your first name:', 'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'col-sm-5 col-form-label'}, ),
             'last_name': forms.TextInput(attrs={
-                'placeholder': 'Last Name:','class': 'form-control'}),
+                'class': 'col-sm-5 col-form-label'}),
             'phone_number': forms.TextInput(attrs={
-                'placeholder': 'Phone number:','class': 'form-control'}),
+                'placeholder': '+359888888888', 'class': 'col-sm-5 col-form-label'}),
             'further_explanation': forms.Textarea(attrs={
-                'placeholder': 'Additional information:','class': 'form-control'}),
+                'placeholder': 'Add more information about customer', 'class': 'col-sm-5 col-form-label'}),
+            'hair_type': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
+            'hair_stylist': forms.CheckboxSelectMultiple(),
+            'hair_long': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
+            'gender': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
 
         }
 
 
-
+class AppProfileEditForm(UserChangeForm):
+    class Meta:
+        model = AppStaffProfile
+        fields = "__all__"
+class AppUserEditForm(UserChangeForm):
+    class Meta:
+        model = UserModel
+        fields = "__all__"
