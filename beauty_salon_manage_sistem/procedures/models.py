@@ -2,6 +2,7 @@ from multiselectfield import MultiSelectField
 from django.db import models
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
+from beauty_salon_manage_sistem.core.validators import validate_image_size
 
 
 # TODO да изнеса различните CHOICES в отделен файл с клас и пропъртита
@@ -126,6 +127,9 @@ class Procedure(models.Model):
         AppCustomerUser,
         on_delete=models.CASCADE,
     )
+
+    before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
+    after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
 
     def __str__(self):
         return f'{self.main_type_of_procedure} - {self.customer.get_full_name()}'

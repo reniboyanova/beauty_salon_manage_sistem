@@ -1,0 +1,18 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    {% if user.is_authenticated and addproducts_list %}
+        <ul>Number of products: {{ addproducts_list.count }}</ul>
+        {% if user.is_superuser %}
+            <a class="btn btn-info" href="{% url 'add product' %}">Add product</a>
+        {% else %}
+            <a class="btn btn-primary" href="{% url 'index page' %}" role="button">Go back!</a>
+        {% endif %}
+    {% else %}
+        <h2>Correct URL!</h2>
+        {% if user.is_superuser %}
+            <a class="btn btn-info" href="{% url 'add product' %}">Add product</a>
+        {% else %}
+            <a class="btn btn-primary" href="{% url 'index page' %}" role="button">Go back!</a>
+        {% endif %}
+    {% endif %}
+{% endblock %}

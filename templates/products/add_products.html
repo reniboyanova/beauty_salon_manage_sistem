@@ -1,8 +1,8 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <form method="post" action="{% url 'add customer' %}">
-
-         {% for field in form %}
+    {% if request.user.is_superuser %}
+    <form method="post" action="{% url 'add product' %}">
+        {% for field in form %}
             <div>
                 {% if field.errors %}
                     {{ field.errors }}
@@ -13,9 +13,12 @@
                 <ul>{{ field }}</ul>
             </div>
         {% endfor %}
-    <ul><button type="submit" class="btn btn-primary">Add</button></ul>
+        <ul>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </ul>
         {% csrf_token %}
     </form>
-
-
+    {% else %}
+    <li>No form</li>
+    {% endif %}
 {% endblock %}

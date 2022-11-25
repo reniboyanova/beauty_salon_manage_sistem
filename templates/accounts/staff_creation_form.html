@@ -1,13 +1,19 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
 <form method="post" action="{% url 'register user' %}">
-    {{ form.email }}
-    {{ form.password1 }}
-    {{ form.password2 }}
-    {{ form.first_name }}
-    {{ form.last_name }}
-    {{ form.position }}
-    <button type="submit">Register</button>
+       {% for field in form %}
+            <div>
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                {% if field.label %}
+                    <ul>{{ field.label }}</ul>
+                {% endif %}
+                <ul>{{ field }}</ul>
+            </div>
+        {% endfor %}
+    <ul><button type="submit" class="btn btn-primary">Register me!</button></ul>
+        {% csrf_token %}
     {% csrf_token %}
 </form>
 {% endblock %}

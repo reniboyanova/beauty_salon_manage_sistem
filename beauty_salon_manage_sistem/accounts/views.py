@@ -11,12 +11,14 @@ UserModel = get_user_model()
 
 class ShowAppUsers(ListView):
     model = UserModel
-    template_name = 'accounts/show_app_users.html'
+    template_name = 'accounts/show_app_customrs.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['staffs'] = UserModel.objects.all()
         context['customers'] = AppCustomerUser.objects.all()
+        context['my_customers'] = AppCustomerUser.objects.filter(hair_stylist__user=self.request.user)
+
         return context
 
 
@@ -72,7 +74,6 @@ class AppProfileDetailsView(DetailView):
         context['is_owner'] = self.request.user == self.object
         context['customers_count'] = self.object.appcustomeruser_set.count()
         context['customers'] = self.object.appcustomeruser_set.all()
-
         # photos = self.object.photo_set.all(). \
         #     prefetch_related('like_set')
         #

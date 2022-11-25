@@ -1,6 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <form method="post" action="{% url 'add procedure to customer' %}">
+    <form method="post" action="{% url 'add procedure to customer'%}" enctype="multipart/form-data">
         {% for field in form %}
             <div>
                 {% if field.errors %}

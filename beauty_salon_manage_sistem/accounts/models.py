@@ -192,7 +192,7 @@ class AppCustomerUser(models.Model):
         return f'{self.get_full_name} - {self.phone_number}'
 
     def __str__(self):
-        return f'{self.get_full_name} - {self.pk}'
+        return f'{self.get_full_name}'
 
     class Meta:
         verbose_name = 'Customer'

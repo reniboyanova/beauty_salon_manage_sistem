@@ -1,6 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+{#<div class="container-fluid">#}
+{#        <a class="navbar-brand" href="{% url 'index page' %}">#}
+{#<img src=https://i.pinimg.com/550x/34/da/64/34da64357c836218b833f3b5daeed7c1.jpg alt="" width="30" height="24">#}
+{#</a>#}
+{#</div>#}
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{% url 'index page' %}">Navbar</a>
+    <img src=https://i.pinimg.com/550x/34/da/64/34da64357c836218b833f3b5daeed7c1.jpg alt="" width="45" height="45">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,27 +20,45 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            My Profile
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{% url 'edit user' pk=request.user.pk %}">Edit
                                 profile</a></li>
                             <li><a class="dropdown-item"
                                    href="{% url 'user details'  pk=request.user.pk %}">Details</a></li>
-                            <li><a class="dropdown-item" href="{% url 'show users' %}">Show users</a></li>
-                            <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
-                            <li><a class="dropdown-item" href="{% url 'add customer' %}">Add a customer</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{% url 'add procedure to customer' %}">Add a
-                                procedures</a></li>
-
+                            {% if user.is_superuser %}
+                            <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
+                            {% else %}
+                                <li><a class="nav-link disabled" href="{% url 'register user' %}" aria-disabled="true">Register Staff</a></li>
+                            {% endif %}
                         </ul>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Customers
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'show users' %}">My customers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add procedure to customer' %}">Add a
+                                procedures</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add customer' %}">Add new customer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'detail product' %}">Products</a>
+                    </li>
+                     <li class="d-flex">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Hello, {{ user.get_full_name_with_profile }}!</a>
+                </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login user' %}">Log in</a>
+                        <a class="nav-link active" href="{% url 'login user' %}">Log in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'register user' %}">Register</a>
@@ -42,9 +66,6 @@
                 {% endif %}
 
 
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,5 +74,3 @@
         </div>
     </div>
 </nav>
-
-<a href="{% url 'show users' %}">Show me users!</a>
