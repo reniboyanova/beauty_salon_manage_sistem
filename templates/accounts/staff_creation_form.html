@@ -1,6 +1,10 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-<form method="post" action="{% url 'register user' %}">
+    <section id="registerPage">
+        <form method="post" action="{% url 'register user' %}">
+            <fieldset>
+                <legend>Profile</legend>
+            <div class="container">
        {% for field in form %}
             <div>
                 {% if field.errors %}
@@ -15,5 +19,8 @@
     <ul><button type="submit" class="btn btn-primary">Register me!</button></ul>
         {% csrf_token %}
     {% csrf_token %}
+            </div>
+ </fieldset>
 </form>
+</section>
 {% endblock %}

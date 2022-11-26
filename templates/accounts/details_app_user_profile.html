@@ -1,13 +1,14 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-{% if customers %}
-    {% for customer in customers %}
-     <ul>{{ customer.full_name_and_phone_number }}</ul>
-        <ul>Customer's procedures <a href="{% url 'index page' %}" class="btn btn-outline-info btn-sm" role="button">Show
-            info</a></ul>
-    {% endfor %}
-    <ul>Number of my customers are: {{ customers_count }}!</ul>
+    {% if customers %}
+        {% for customer in customers %}
+            <ul>{{ customer.full_name_and_phone_number }}</ul>
+            <ul>Customer's procedures <a href="{% url 'procedures of customer' pk=customer.pk %}"
+                                         class="btn btn-outline-info btn-sm" role="button">Show
+                info</a></ul>
+        {% endfor %}
+        <ul>Number of my customers are: {{ customers_count }}!</ul>
     {% else %}
-    <h3>No customers</h3>
+        <h3>No customers</h3>
     {% endif %}
 {% endblock %}

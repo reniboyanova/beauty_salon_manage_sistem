@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 
 from beauty_salon_manage_sistem.procedures.forms import AddProcedureToCustomerForm
+from beauty_salon_manage_sistem.procedures.models import Procedure
 
 
 class AddProcedureToCustomer(CreateView):
@@ -20,3 +21,16 @@ class AddProcedureToCustomer(CreateView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+
+class ShowAllCustomersProcedure(ListView):
+    template_name = 'procedures/show_all_customer_procedures.html'
+    queryset = Procedure.objects.all()
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        customer_procedures = self.queryset.filter(customer__hair_stylist__user=self.request.user)
+        context['customer_procedures'] = customer_procedures
+        return context
+
+
+
