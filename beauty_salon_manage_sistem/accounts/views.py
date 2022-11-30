@@ -55,7 +55,7 @@ class SignOutView(LogoutView):
     next_page = reverse_lazy('index page')
 
 
-class AppProfileUpdateView(UpdateView):
+class AppStaffProfileUpdateView(UpdateView):
     model = AppStaffProfile
     fields = ('first_name', 'last_name', 'position')
     template_name = 'accounts/edit_app_user_profile.html'
@@ -64,7 +64,7 @@ class AppProfileUpdateView(UpdateView):
         return reverse_lazy('index page')
 
 
-class AppProfileDetailsView(DetailView):
+class AppStaffProfileDetailsView(DetailView):
     template_name = 'accounts/details_app_user_profile.html'
     model = AppStaffProfile
 
@@ -82,3 +82,22 @@ class AppProfileDetailsView(DetailView):
 
         return context
 
+
+class AppCustomerProfileDeleteView(DeleteView):
+    # specify the model you want to use
+    model = AppStaffProfile
+
+    # can specify success url
+    # url to redirect after successfully
+    # deleting object
+    success_url = reverse_lazy('user details')
+
+    template_name = "accounts/delete_appcustomer_profile.html"
+
+class AppCustomerProfileUpdateView(UpdateView):
+    model = AppCustomerUser
+    fields = ('__all__',)
+    template_name = 'accounts/edit_appcustomer_profile.html'
+
+    def get_success_url(self):
+        return reverse_lazy('index page')

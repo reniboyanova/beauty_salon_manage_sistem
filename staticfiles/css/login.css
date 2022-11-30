@@ -1,52 +1,36 @@
-.login-register-div {
-	margin-top: 13%;
+#labelIdforFiels {
+    color: white;
+    margin-bottom: 5px;
+
 }
 
-.login-register-box, .second-option {
-	display: block;
-	width: 300px;
-	background-color: rgb(255, 255, 255);
-	border: 1px solid rgb(156, 152, 152);
-	padding: 40px;
-	margin-bottom: 15px;
-	border-radius: 3px;
-	border: 1px solid;
-	box-shadow: 1px 2px 3px #888888;
+input {
+    background-color: white;
+    border-color: black;
+    contain-intrinsic-size: 20px;
+
 }
 
-.login-register-box h1 {
-	font-family: 'Rage Italic', cursive;
-	font-size: 40px;
-	text-align: center;
-	margin-top: -10px;
+input:focus {
+    color: black;
 }
 
-.login-register-box label {
-	display: none;
+#fieldsStyle {
+    margin-bottom: 40px;
 }
 
-.login-register-box input {
-	background-color: rgb(240, 230, 230);
-	border: 0.1px solid rgb(186, 184, 184);
-	border-radius: 3px;
-	height: 30px;
-	width: 100%;
-	padding-left: 2px;
-	margin-top: 10px;
+#buttonSubmision {
+    background-color: black;
+    color: white;
+    border-color: #333333;
+
 }
 
-.login-register-box button {
-	background-color: rgb(8, 15, 19);
-	color: white;
-	font-weight: bold;
-	border: none;
-	width: 100%;
-	/*border-radius: 3px;*/
-	/*margin-top: 10px;*/
-	/*height: 30px;*/
+div.login-register-div {
+    margin-left: auto;
+    margin-right: auto
 }
 
-.second-option {
-	text-align: center;
-	padding: 20px;
+.main-text-class {
+
 }

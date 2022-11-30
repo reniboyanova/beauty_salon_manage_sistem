@@ -4,21 +4,36 @@
     <!-- Start Login Section-->
     <div class="login-register-div">
         <div class="login-register-box">
-            <h1>Log in:</h1>
-        <form method="post" action="{% url 'login user' %}">
-
-                {{ form }}
-                <input name="next" type="hidden" value="{% url 'index page' %}">
-                <button type="submit" class="btn btn-primary">Log in</button>
+            <form method="post" action="{% url 'login user' %}">
+                {% for field in form %}
+                    <div>
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {% if field.label %}
+                            <div id="labelIdforFiels">{{ field.label }}</div>
+                        {% endif %}
+                        <div id="fieldsStyle">{{ field }}</div>
+                    </div>
+                {% endfor %}{#                    {{ form.email.errors }}#}
+                {#                    {{ form.email.label }}#}
+                {#                    {{ form.email }}#}
+                {#                    {{ form.password1.errors }}#}
+                {#                    {{ form.password1.label }}#}
+                {#                    {{ form.password1 }}#}
+                {#                    {{ form.password2.errors }}#}
+                {#                    {{ form.password2.label }}#}
+                {#                    {{ form.password2 }}#}
+                <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Log in</button></div>
                 {% csrf_token %}
-
             </form>
             <!-- End Login Form -->
         </div>
         <div class="second-option">
 
             <!-- Link to Register Page-->
-            <p>Don't have account? <a href="{% url 'register user' %}">Register</a></p>
+            <p id="labelIdforFiels">Don't have account? <a href="{% url 'register user' %}">Register</a></p>
         </div>
     </div>
     <!-- End Login Section-->

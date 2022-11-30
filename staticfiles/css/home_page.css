@@ -13,10 +13,27 @@ nav.navbar {
 footer {
     /*background-image: url('/static/images/background-black-colors-952670.jpg');*/
     color: #ffffff;
-    background-color: #0B0C10;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
+.container-inline {
+    color: white;
+    margin: 1rem;
+    padding: 2rem 2rem;
 
+
+}
+
+footer section {
+    mar: 25px;
+}
 
 /*.container-inline {*/
 /*  margin: 1rem;*/

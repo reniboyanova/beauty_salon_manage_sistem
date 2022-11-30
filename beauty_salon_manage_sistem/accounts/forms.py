@@ -5,6 +5,7 @@ from django.core import validators
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
 from beauty_salon_manage_sistem.core.validators import validate_only_letters
+from beauty_salon_manage_sistem.procedures.models import Procedure
 
 UserModel = get_user_model()
 
@@ -115,7 +116,29 @@ class AppProfileEditForm(UserChangeForm):
     class Meta:
         model = AppStaffProfile
         fields = "__all__"
+
+
 class AppUserEditForm(UserChangeForm):
     class Meta:
         model = UserModel
         fields = "__all__"
+
+
+class AppProfileDeleteForm(AddingCustomerForm):
+    class Meta:
+        model = AppCustomerUser
+        fields = ()
+
+    def save(self, commit=True):
+        if commit:
+            Procedure.objects \
+                .all() \
+                .delete()
+            self.instance.delete()
+
+        return self.instance
+
+
+class AlbumEditForm(AddingCustomerForm):
+    pass
+

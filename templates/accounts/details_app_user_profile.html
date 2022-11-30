@@ -5,6 +5,10 @@
             <ul>{{ customer.full_name_and_phone_number }}</ul>
             <ul>Customer's procedures <a href="{% url 'procedures of customer' pk=customer.pk %}"
                                          class="btn btn-outline-info btn-sm" role="button">Show
+                info</a> <a href="{% url 'delete customer profile' pk=customer.pk %}"
+                                         class="btn btn-outline-info btn-sm" role="button">Delete
+                info</a><a href="{% url 'edit customer profile' pk=customer.pk %}"
+                                         class="btn btn-outline-info btn-sm" role="button">Edit
                 info</a></ul>
         {% endfor %}
         <ul>Number of my customers are: {{ customers_count }}!</ul>
