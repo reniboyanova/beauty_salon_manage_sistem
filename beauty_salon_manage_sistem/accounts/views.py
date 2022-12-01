@@ -74,6 +74,7 @@ class AppStaffProfileDetailsView(DetailView):
         context['is_owner'] = self.request.user == self.object
         context['customers_count'] = self.object.appcustomeruser_set.count()
         context['customers'] = self.object.appcustomeruser_set.all()
+
         # photos = self.object.photo_set.all(). \
         #     prefetch_related('like_set')
         #
@@ -83,20 +84,30 @@ class AppStaffProfileDetailsView(DetailView):
         return context
 
 
+class SuperUserProfileDetailsView(ListView):
+    template_name = 'accounts/details_app_user_profile_for_superuser.html'
+    model = UserModel
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['staffs'] = AppStaffProfile.objects.all()
+        return context
+
+
 class AppCustomerProfileDeleteView(DeleteView):
     # specify the model you want to use
-    model = AppStaffProfile
+    model = AppCustomerUser
 
     # can specify success url
     # url to redirect after successfully
     # deleting object
-    success_url = reverse_lazy('user details')
+    success_url = reverse_lazy('index page')
 
     template_name = "accounts/delete_appcustomer_profile.html"
 
 class AppCustomerProfileUpdateView(UpdateView):
     model = AppCustomerUser
-    fields = ('__all__',)
+    fields = ('hair_stylist', 'last_name', 'phone_number', 'hair_long', 'hair_type',)
     template_name = 'accounts/edit_appcustomer_profile.html'
 
     def get_success_url(self):

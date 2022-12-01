@@ -48,6 +48,7 @@ class RegistrationAppUserForm(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
+            'label': 'Password'
         }),
     )
     password2 = forms.CharField(
@@ -65,9 +66,7 @@ class RegistrationAppUserForm(UserCreationForm):
             }),
 
         }
-        labels = {
-            'email': 'Email:',
-        }
+
 
     def cleaned_data_fist_name(self):
         return self.cleaned_data['first_name']
@@ -139,6 +138,6 @@ class AppProfileDeleteForm(AddingCustomerForm):
         return self.instance
 
 
-class AlbumEditForm(AddingCustomerForm):
+class AppCustomerEditForm(AddingCustomerForm):
     pass
 

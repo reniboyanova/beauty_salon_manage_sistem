@@ -2,16 +2,21 @@
 {% block content %}
     {% if customers %}
         {% for customer in customers %}
-            <ul>{{ customer.full_name_and_phone_number }}</ul>
-            <ul>Customer's procedures <a href="{% url 'procedures of customer' pk=customer.pk %}"
-                                         class="btn btn-outline-info btn-sm" role="button">Show
-                info</a> <a href="{% url 'delete customer profile' pk=customer.pk %}"
-                                         class="btn btn-outline-info btn-sm" role="button">Delete
-                info</a><a href="{% url 'edit customer profile' pk=customer.pk %}"
-                                         class="btn btn-outline-info btn-sm" role="button">Edit
-                info</a></ul>
+            <div class="main-text-class">{{ customer.full_name_and_phone_number }}</div>
+            <div class="main-text-class">Customer's procedures <a
+                href="{% url 'procedures of customer' pk=customer.pk %}"
+                class="btn btn-outline-info btn-sm" role="button">Show
+            info</a>
+            <a href="{% url 'delete customer profile' pk=customer.pk %}"
+               class="btn btn-outline-info btn-sm" role="button">Delete
+                user</a>
+            <a href="{% url 'edit customer profile' pk=customer.pk %}"
+               class="btn btn-outline-info btn-sm" role="button">Edit
+                user</a>
+        </div>
+
         {% endfor %}
-        <ul>Number of my customers are: {{ customers_count }}!</ul>
+        <div>Number of my customers are: {{ customers_count }}!</div>
     {% else %}
         <h3>No customers</h3>
     {% endif %}

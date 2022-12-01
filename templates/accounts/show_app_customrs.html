@@ -1,20 +1,16 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
+    {% if customers %}
     {% for customer in customers %}
-        <li>{{ customer.full_name_and_phone_number }}</li>
-        <p>Customer's procedures <a href="{% url 'index page' %}" class="btn btn-outline-info" role="button">Show
-            info</a></p>
+        <div>{{ customer.full_name_and_phone_number }}</div>
+        <div>Customer's procedures <a href="{% url 'index page' %}" class="btn btn-outline-info" role="button"  id="buttonSubmision">Show
+            info</a></div>
     {% endfor %}
-    <ul>You don't have any customers yet!</ul>
-
-    <ul>
-        All beauty salon customers are: {{ customers.count }}!
-    </ul>
-    {% if staffs %}
-        <ul>
-            We have {{ staffs.count }} staffs!
-        </ul>
     {% else %}
-        <ul>Dont have any staff yet!</ul>
+    <div>You don't have any customers yet!</div>
     {% endif %}
+
+    <div>
+        All beauty salon customers are: {{ customers.count }}!
+    </div>
 {% endblock %}

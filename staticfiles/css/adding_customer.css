@@ -1,0 +1,29 @@
+div.adding-customer-div {
+    width: 560px;
+    padding: 30px;
+    border: 2px solid white;
+    margin: auto;
+    border-radius: 30px;
+    color: white;
+
+}
+
+div.adding-customer-box {
+    width: 440px;
+    margin: auto;
+}
+
+select {
+    width: 180px;
+    height: 30px;
+    margin: auto
+}
+
+input[type=text] {
+    width: 80%;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

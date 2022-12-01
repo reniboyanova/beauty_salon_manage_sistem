@@ -1,15 +1,28 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <!-- Start Edit Profile Section -->
-        <h2>Edit Profile</h2>
-        <!-- Start Edit Profile From -->
+<div class="box-in-center">
+    <!-- Start Login Section-->
+    <div class="login-register-div">
+        <div class="login-register-box">
         <form method="post" action="{% url 'edit user' pk=appstaffprofile.pk %}">
-            {{ form.as_p }}
-            <button class="edit-btn" type="submit">Edit</button>
+            {% for field in form %}
+                    <div>
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {% if field.label %}
+                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                        {% endif %}
+                        <div id="fieldsStyle">{{ field }}</div>
+                    </div>
+                {% endfor %}
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Edit</button></div>
             {% csrf_token %}
         </form>
         <!-- End Edit Profile Form -->
 
     <!-- End Edit Profile Section -->
-
+        </div>
+    </div>
+</div>
 {% endblock %}

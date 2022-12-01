@@ -1,24 +1,30 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if request.user.is_superuser %}
-    <form method="post" action="{% url 'add product' %}">
-        {% for field in form %}
-            <div>
-                {% if field.errors %}
-                    {{ field.errors }}
-                {% endif %}
-                {% if field.label %}
-                    <ul>{{ field.label }}</ul>
-                {% endif %}
-                <ul>{{ field }}</ul>
+        <div class="box-in-center">
+            <!-- Start Login Section-->
+            <div class="login-register-div">
+                <div class="login-register-box">
+                    <form method="post" action="{% url 'add product' %}">
+                         {% for field in form %}
+                    <div>
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {% if field.label %}
+                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                        {% endif %}
+                        <div id="fieldsStyle">{{ field }}</div>
+                    </div>
+                {% endfor %}
+                <div><input name="next" type="hidden" value="{% url 'add product' %}"></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Add</button></div>
+                {% csrf_token %}
+                        {% csrf_token %}
+                    </form>
+                </div>
             </div>
-        {% endfor %}
-        <ul>
-            <button type="submit" class="btn btn-primary">Add</button>
-        </ul>
-        {% csrf_token %}
-    </form>
-    {% else %}
-    <li>No form</li>
+        </div>
+
     {% endif %}
 {% endblock %}

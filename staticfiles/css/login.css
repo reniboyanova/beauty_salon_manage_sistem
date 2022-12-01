@@ -1,14 +1,20 @@
 #labelIdforFiels {
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+}
+
+
+input {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: white;
+    contain-intrinsic-size: 20px;
+    -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
 
 }
 
-input {
-    background-color: white;
-    border-color: black;
-    contain-intrinsic-size: 20px;
-
+::placeholder {
+    color: black;
 }
 
 input:focus {
@@ -16,7 +22,7 @@ input:focus {
 }
 
 #fieldsStyle {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #buttonSubmision {
@@ -26,11 +32,52 @@ input:focus {
 
 }
 
+#buttonSubmision:active {
+    background-color: rgb(166, 127, 192);
+}
+
 div.login-register-div {
     margin-left: auto;
     margin-right: auto
 }
 
 .main-text-class {
+    color: white;
+    font-size: 35px;
 
 }
+
+div.main-text-class {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 15px;
+    padding-right: 20px;
+}
+
+div.login-register-div {
+    width: 300px;
+    padding: 30px;
+    border: 2px solid white;
+    margin: auto;
+    border-radius: 30px;
+
+}
+
+div.box-in-center {
+    margin-top: 50px;
+    font-family: "Gill Sans Extrabold", sans-serif;
+
+}
+
+div.login-register-box {
+    width: 190px;
+    margin: auto
+}
+
+#linkText:active {
+    background-color: rgb(166, 127, 192);
+}
+
+
+

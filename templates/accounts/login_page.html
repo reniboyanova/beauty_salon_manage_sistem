@@ -1,6 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-
+<div class="box-in-center">
     <!-- Start Login Section-->
     <div class="login-register-div">
         <div class="login-register-box">
@@ -11,19 +11,11 @@
                             {{ field.errors }}
                         {% endif %}
                         {% if field.label %}
-                            <div id="labelIdforFiels">{{ field.label }}</div>
+                            <div id="labelIdforFiels">{{ field.label }}:</div>
                         {% endif %}
                         <div id="fieldsStyle">{{ field }}</div>
                     </div>
-                {% endfor %}{#                    {{ form.email.errors }}#}
-                {#                    {{ form.email.label }}#}
-                {#                    {{ form.email }}#}
-                {#                    {{ form.password1.errors }}#}
-                {#                    {{ form.password1.label }}#}
-                {#                    {{ form.password1 }}#}
-                {#                    {{ form.password2.errors }}#}
-                {#                    {{ form.password2.label }}#}
-                {#                    {{ form.password2 }}#}
+                {% endfor %}
                 <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
                 <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Log in</button></div>
                 {% csrf_token %}
@@ -33,9 +25,10 @@
         <div class="second-option">
 
             <!-- Link to Register Page-->
-            <p id="labelIdforFiels">Don't have account? <a href="{% url 'register user' %}">Register</a></p>
+            <p id="labelIdforFiels">Don't have account? <a id="linkText" href="{% url 'register user' %}">Register</a></p>
         </div>
     </div>
+</div>
     <!-- End Login Section-->
 
 {% endblock %}

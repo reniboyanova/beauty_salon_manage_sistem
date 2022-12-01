@@ -1,25 +1,30 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
+    <div class="box-in-center">
+    <!-- Start Login Section-->
+    <div class="adding-procedure-div">
+        <div class="adding-procedure-box">
     <form method="post" action="{% url 'add procedure to customer'%}" enctype="multipart/form-data">
-        {% for field in form %}
-            <div>
-                {% if field.errors %}
-                    {{ field.errors }}
-                {% endif %}
-                {% if field.label %}
-                    <ul>{{ field.label }}</ul>
-                {% endif %}
-                <ul>{{ field }}</ul>
-            </div>
-        {% endfor %}
+         {% for field in form %}
+                    <div>
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {% if field.label %}
+                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                        {% endif %}
+                        <div id="addingProcedure">{{ field }}</div>
+                    </div>
+                {% endfor %}
         {% csrf_token %}
-
-        <ul><button type="submit" class="btn btn-primary">Add procedure</button></ul>
+<div><input name="next" type="hidden" value="{% url 'add procedure to customer' %}"></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Add procedure</button></div>
     </form>
     <div>
-        <ul>
-            <button type="button" class="btn btn-outline-secondary" value="{% url 'add customer' %}">Add Customer
-            </button>
-        </ul>
+        <a href="{% url 'add customer' %}" class="btn btn-outline-secondary" role="button">Add Customer</a>
     </div>
+        </div>
+    </div>
+    </div>
+
 {% endblock %}

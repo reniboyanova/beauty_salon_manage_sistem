@@ -1,0 +1,13 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    {% if staffs %}
+        {% for staff in staffs %}
+            <div class="main-text-class">{{ staff.get_full_name }} <a href="{% url 'edit user' pk=staff.pk %}"
+               class="btn btn-outline-info btn-sm"  role="button" id="buttonSubmision">Edit
+                staff</a></div>
+        {% endfor %}
+        <ul>Number of my staff are: {{ staffs.all.count }}!</ul>
+    {% else %}
+        <h3>No customers</h3>
+    {% endif %}
+{% endblock %}

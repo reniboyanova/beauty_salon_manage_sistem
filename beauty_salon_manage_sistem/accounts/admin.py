@@ -11,6 +11,7 @@ class AppBaseUserAdmin(admin.ModelAdmin):
     def get_form(self, request, obj=None, **kwargs):
         return super().get_form(request, obj, **kwargs)
 
+
 @admin.register(AppStaffProfile)
 class AppStaffProfileAdmin(admin.ModelAdmin):
     form = AppUserEditForm

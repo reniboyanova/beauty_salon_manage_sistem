@@ -1,21 +1,30 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <form method="post" action="{% url 'add customer' %}">
+    <div class="box-in-center">
+        <!-- Start Login Section-->
+        <div class="adding-customer-div">
+            <div class="adding-customer-box">
+                <form method="post" action="{% url 'add customer' %}">
 
-         {% for field in form %}
-            <div>
-                {% if field.errors %}
-                    {{ field.errors }}
-                {% endif %}
-                {% if field.label %}
-                    <ul>{{ field.label }}</ul>
-                {% endif %}
-                <ul>{{ field }}</ul>
+                    {% for field in form %}
+                        <div>
+                            {% if field.errors %}
+                                {{ field.errors }}
+                            {% endif %}
+                            {% if field.label %}
+                                <div id="labelIdforFiels">{{ field.label }}</div>
+                            {% endif %}
+                            <div id="addingCustomer">{{ field }}</div>
+                        </div>
+                    {% endfor %}
+                    <div><input name="next" type="hidden" value="{% url 'add customer' %}"></div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" id="buttonSubmision">Add customer</button>
+                    </div>
+                    {% csrf_token %}
+                </form>
+
             </div>
-        {% endfor %}
-    <ul><button type="submit" class="btn btn-primary">Add</button></ul>
-        {% csrf_token %}
-    </form>
-
-
+        </div>
+    </div>
 {% endblock %}

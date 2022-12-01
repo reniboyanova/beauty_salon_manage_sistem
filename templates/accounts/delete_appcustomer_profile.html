@@ -1,18 +1,28 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <section id="detailsPage">
-    <div class="wrapper">
-        <div class="profileText">
-            <!-- Delete Profile Form -->
-            <h1>Are you sure you want to delete your profile?</h1>
+<div class="box-in-center">
+    <!-- Start Login Section-->
+    <div class="login-register-div">
+        <div class="login-register-box">
+            <h1 class="main-text-class">Are you sure you want to delete your profile?</h1>
             <form method="post" action="{% url 'delete customer profile' pk=object.pk%}">
-                {{ form }}
-                <!-- Confirm Button -->
-                <button class="delete-profile" type="submit">Delete</button>
+            {% for field in form %}
+                    <div>
+                        {% if field.errors %}
+                            {{ field.errors }}
+                        {% endif %}
+                        {% if field.label %}
+                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                        {% endif %}
+                        <div id="fieldsStyle">{{ field }}</div>
+                    </div>
+                {% endfor %}
+                <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Delete</button></div>
                 {% csrf_token %}
             </form>
             <!-- End Delete Profile Form -->
         </div>
     </div>
-</section>
+</div>
 {% endblock %}
