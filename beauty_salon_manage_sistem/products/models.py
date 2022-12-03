@@ -35,3 +35,11 @@ class AddProducts(models.Model):
         verbose_name='Product image:'
     )
 
+    @property
+    def information_about_product(self):
+        return f'{self.brand} - {self.type_of_product} with serial #{self.serial_number}'
+
+    def __str__(self):
+        return f'{self.brand} - {self.type_of_product} with serial #{self.serial_number}'
+
+

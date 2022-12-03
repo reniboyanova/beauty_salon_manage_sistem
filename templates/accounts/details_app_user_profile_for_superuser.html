@@ -2,12 +2,12 @@
 {% block content %}
     {% if staffs %}
         {% for staff in staffs %}
-            <div class="main-text-class">{{ staff.get_full_name }} <a href="{% url 'edit user' pk=staff.pk %}"
+            <div class="main-text-class" id="labelIdforPlainText">{{ staff.get_full_name }} <a href="{% url 'edit user' pk=staff.pk %} "
                class="btn btn-outline-info btn-sm"  role="button" id="buttonSubmision">Edit
                 staff</a></div>
         {% endfor %}
-        <ul>Number of my staff are: {{ staffs.all.count }}!</ul>
+        <div id="labelIdforPlainText">Number of my staff are: {{ staffs.all.count }}!</div>
     {% else %}
-        <h3>No customers</h3>
+        <h3 id="labelIdforPlainText">No customers yet!</h3>
     {% endif %}
 {% endblock %}

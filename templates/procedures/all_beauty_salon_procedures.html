@@ -1,0 +1,23 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    {% for procedure in procedure_list %}
+        <div id="labelIdforPlainText">Main type of procedure is: {{ procedure.main_type_of_procedure }} - {{ procedure.customer.get_full_name }}. Date: {{ procedure.date }}</div>
+{#        <div id="labelIdforPlainText">Before image:</div>#}
+{#        <div class="col-md-4">#}
+{#            <div class="thumbnail">#}
+{#                <a href="{{ procedure.before_image.url }}">#}
+{#                    <img src="{{ procedure.before_image.url }}" alt="Lights" style="width:50%">#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div id="labelIdforPlainText">After image:</div>#}
+{#        <div class="col-md-4">#}
+{#            <div class="thumbnail">#}
+{#                <a href="{{ procedure.after_image_image.url }}">#}
+{#                    <img src="{{ procedure.after_image.url }}" alt="Lights" style="width:50%">#}
+{#                </a>#}
+{#            </div>#}
+        </div>
+    {% endfor %}
+    <div id="labelIdforPlainText">Number of all customer's procedures are: {{ procedure_list.count }}!</div>
+{% endblock %}

@@ -2,15 +2,15 @@
 {% block content %}
     {% if customers %}
     {% for customer in customers %}
-        <div>{{ customer.full_name_and_phone_number }}</div>
-        <div>Customer's procedures <a href="{% url 'index page' %}" class="btn btn-outline-info" role="button"  id="buttonSubmision">Show
+        <div id="labelIdforPlainText">{{ customer.full_name_and_phone_number }}</div>
+        <div id="labelIdforPlainText">Customer's procedures <a href="{% url 'all customer procedures' pk=customer.pk%}" class="btn btn-outline-info" role="button"  id="buttonSubmision">Show
             info</a></div>
     {% endfor %}
     {% else %}
-    <div>You don't have any customers yet!</div>
+    <div id="labelIdforPlainText">You don't have any customers yet!</div>
     {% endif %}
 
-    <div>
+    <div id="labelIdforPlainText">
         All beauty salon customers are: {{ customers.count }}!
     </div>
 {% endblock %}

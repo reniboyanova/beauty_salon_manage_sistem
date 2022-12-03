@@ -8,7 +8,7 @@
                 {% for field in form %}
                     <div>
                         {% if field.errors %}
-                            {{ field.errors }}
+                             <div class="errors">{{ field.errors }}</div>
                         {% endif %}
                         {% if field.label %}
                             <div id="labelIdforFiels">{{ field.label }}:</div>
@@ -16,7 +16,7 @@
                         <div id="fieldsStyle">{{ field }}</div>
                     </div>
                 {% endfor %}
-                <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
+                <div><input name="next" type="hidden" value="{% url 'index page with profile' %}"></div>
                 <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Log in</button></div>
                 {% csrf_token %}
             </form>
@@ -25,7 +25,7 @@
         <div class="second-option">
 
             <!-- Link to Register Page-->
-            <p id="labelIdforFiels">Don't have account? <a id="linkText" href="{% url 'register user' %}">Register</a></p>
+            <div id="labelIdforPlainText">Don't have account? <a id="linkText" href="{% url 'register user' %}">Register</a></div>
         </div>
     </div>
 </div>

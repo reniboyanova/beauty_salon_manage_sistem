@@ -4,12 +4,12 @@
     <!-- Start Login Section-->
     <div class="login-register-div">
         <div class="login-register-box">
-            <h1 class="main-text-class">Are you sure you want to delete your profile?</h1>
+            <h1 id="labelIdforPlainText">Are you sure you want to delete customer profile?</h1>
             <form method="post" action="{% url 'delete customer profile' pk=object.pk%}">
             {% for field in form %}
                     <div>
                         {% if field.errors %}
-                            {{ field.errors }}
+                             <div class="errors"> {{ field.errors }}</div>
                         {% endif %}
                         {% if field.label %}
                             <div id="labelIdforFiels">{{ field.label }}:</div>

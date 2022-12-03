@@ -102,7 +102,7 @@ class AddingCustomerForm(forms.ModelForm):
             'phone_number': forms.TextInput(attrs={
                 'placeholder': '+359888888888', 'class': 'col-sm-5 col-form-label'}),
             'further_explanation': forms.Textarea(attrs={
-                'placeholder': 'Add more information about customer', 'class': 'col-sm-5 col-form-label'}),
+                'placeholder': 'Add more information about customer'}),
             'hair_type': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
             'hair_stylist': forms.CheckboxSelectMultiple(),
             'hair_long': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),

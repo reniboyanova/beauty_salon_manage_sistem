@@ -4,7 +4,8 @@
     <!-- Start Login Section-->
     <div class="login-register-div">
         <div class="login-register-box">
-        <form method="post" action="{% url 'edit user' pk=appstaffprofile.pk %}">
+            <h1 id="labelIdforPlainText">Are you sure you want to delete product?</h1>
+            <form method="post" action="{% url 'delete customer profile' pk=object.pk%}">
             {% for field in form %}
                     <div>
                         {% if field.errors %}
@@ -16,12 +17,11 @@
                         <div id="fieldsStyle">{{ field }}</div>
                     </div>
                 {% endfor %}
-                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Edit</button></div>
-            {% csrf_token %}
-        </form>
-        <!-- End Edit Profile Form -->
-
-    <!-- End Edit Profile Section -->
+                <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Delete</button> <button type="submit" class="btn btn-primary" value="{% url 'detail product' %}">Go back</button></div>
+                {% csrf_token %}
+            </form>
+            <!-- End Delete Profile Form -->
         </div>
     </div>
 </div>

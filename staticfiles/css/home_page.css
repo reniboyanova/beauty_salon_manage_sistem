@@ -19,7 +19,8 @@ footer {
     text-align: center;
     font-weight: bold;
     font-family: "Gill Sans Extrabold", sans-serif;
-    position: fixed; !important;
+    position: fixed;
+!important;
 }
 
 .container-inline {
@@ -43,5 +44,10 @@ textarea {
     border-color: white;
     -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
     box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.errors {
+    color: #c51244;
+    text-decoration: underline #c51244;
 }
 

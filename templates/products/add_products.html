@@ -9,7 +9,7 @@
                          {% for field in form %}
                     <div>
                         {% if field.errors %}
-                            {{ field.errors }}
+                             <div class="errors"> {{ field.errors }}</div>
                         {% endif %}
                         {% if field.label %}
                             <div id="labelIdforFiels">{{ field.label }}:</div>

@@ -2,7 +2,7 @@ from django.urls import path, include
 
 from beauty_salon_manage_sistem.accounts.views import ShowAppUsers, CreateAppStaffUser, CreateCustomer, SignInView, \
     SignOutView, AppStaffProfileUpdateView, AppStaffProfileDetailsView, AppCustomerProfileDeleteView, \
-    AppCustomerProfileUpdateView, SuperUserProfileDetailsView
+    AppCustomerProfileUpdateView, SuperUserProfileDetailsView, ShowCurrentCustomerProcedure
 
 urlpatterns = (
     path('show-users/', ShowAppUsers.as_view(), name='show users'),
@@ -18,6 +18,7 @@ urlpatterns = (
     path('customer/<int:pk>/', include([
         path('delete/', AppCustomerProfileDeleteView.as_view(), name='delete customer profile'),
         path('edit/', AppCustomerProfileUpdateView.as_view(), name='edit customer profile'),
+        path('procedures/', ShowCurrentCustomerProcedure.as_view(), name='all customer procedures'),
     ])),
 )
 

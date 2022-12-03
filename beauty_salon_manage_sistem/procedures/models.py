@@ -131,6 +131,8 @@ class Procedure(models.Model):
     before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
     after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
 
+    date = models.DateTimeField(auto_now_add=True,)
+
     def __str__(self):
         return f'{self.main_type_of_procedure} - {self.customer.get_full_name()}'
 

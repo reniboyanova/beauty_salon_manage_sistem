@@ -25,7 +25,7 @@ class ShowAppUsers(ListView):
 class CreateAppStaffUser(CreateView):
     template_name = 'accounts/staff_creation_form.html'
     form_class = RegistrationAppUserForm
-    success_url = reverse_lazy('index page')
+    success_url = reverse_lazy('index page with profile')
 
     def form_valid(self, form):
         result = super().form_valid(form)
@@ -61,7 +61,7 @@ class AppStaffProfileUpdateView(UpdateView):
     template_name = 'accounts/edit_app_user_profile.html'
 
     def get_success_url(self):
-        return reverse_lazy('index page')
+        return reverse_lazy('index page with profile')
 
 
 class AppStaffProfileDetailsView(DetailView):
@@ -95,13 +95,8 @@ class SuperUserProfileDetailsView(ListView):
 
 
 class AppCustomerProfileDeleteView(DeleteView):
-    # specify the model you want to use
     model = AppCustomerUser
-
-    # can specify success url
-    # url to redirect after successfully
-    # deleting object
-    success_url = reverse_lazy('index page')
+    success_url = reverse_lazy('index page with profile')
 
     template_name = "accounts/delete_appcustomer_profile.html"
 
@@ -111,4 +106,15 @@ class AppCustomerProfileUpdateView(UpdateView):
     template_name = 'accounts/edit_appcustomer_profile.html'
 
     def get_success_url(self):
-        return reverse_lazy('index page')
+        return reverse_lazy('index page with profile')
+
+
+class ShowCurrentCustomerProcedure(DetailView):
+    template_name = 'procedures/show_current_customer_procedure.html'
+    model = AppCustomerUser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_customers_has_procedures'] = self.object.procedure_set.all()
+
+        return context
