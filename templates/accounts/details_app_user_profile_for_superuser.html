@@ -1,13 +1,31 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if staffs %}
-        {% for staff in staffs %}
-            <div class="main-text-class" id="labelIdforPlainText">{{ staff.get_full_name }} <a href="{% url 'edit user' pk=staff.pk %} "
-               class="btn btn-outline-info btn-sm"  role="button" id="buttonSubmision">Edit
-                staff</a></div>
-        {% endfor %}
-        <div id="labelIdforPlainText">Number of my staff are: {{ staffs.all.count }}!</div>
+
+            {% for staff in staffs %}
+                <div class="card" style="margin-bottom: 10px; margin-left: 20px; margin-right: 20px;">
+                <h5 class="card-header" style="background-color: grey">{{ staff.position }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{ staff.get_full_name }}</h5>
+                    <p class="card-text">Number of customers: {{ staff.appcustomeruser_set.count }}</p>
+                    <p class="card-text">Join in team: date!</p>
+                    <a class="btn btn-outline-dark btn-sm"
+                       href="{% url 'edit user' pk=staff.pk %}">Edit</a>
+
+                </div>
+                  </div>
+            {% endfor %}
+
     {% else %}
-        <h3 id="labelIdforPlainText">No customers yet!</h3>
+        <h3 class="text-margin-left" id="labelIdforPlainText">No customers yet!</h3>
     {% endif %}
+    {#        <div class="text-margin-left">#}
+    {#        {% for staff in staffs %}#}
+    {##}
+    {#            <div id="labelIdforPlainText">{{ staff.get_full_name }} <a href="{% url 'edit user' pk=staff.pk %} "#}
+    {#               class="btn btn-outline-info btn-sm"  role="button" id="buttonSubmision">Edit#}
+    {#                staff</a></div>#}
+    {#        {% endfor %}#}
+    {#        <div class="text-margin-left" id="labelIdforPlainText">Number of my staff are: {{ staffs.all.count }}!</div>#}
+
 {% endblock %}

@@ -5,7 +5,7 @@
     <div class="login-register-div">
         <div class="login-register-box">
             <h1 id="labelIdforPlainText">Are you sure you want to delete product?</h1>
-            <form method="post" action="{% url 'delete customer profile' pk=object.pk%}">
+            <form method="post" action="{% url 'delete product' pk=object.pk%}">
             {% for field in form %}
                     <div>
                         {% if field.errors %}
@@ -17,8 +17,8 @@
                         <div id="fieldsStyle">{{ field }}</div>
                     </div>
                 {% endfor %}
-                <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
-                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Delete</button> <button type="submit" class="btn btn-primary" value="{% url 'detail product' %}">Go back</button></div>
+                <div><input name="next" type="hidden" value="{% url 'detail product' %}"></div>
+                <div><button type="submit" class="btn btn-primary btn-sm" id="buttonSubmision">Delete</button> <button type="submit" class="btn btn-primary" value="{% url 'detail product' %}">Go back</button></div>
                 {% csrf_token %}
             </form>
             <!-- End Delete Profile Form -->

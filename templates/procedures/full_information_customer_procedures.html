@@ -1,0 +1,86 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    <div class="box-in-center">
+    <!-- Start Login Section-->
+    <div class="adding-procedure-div">
+        <div class="adding-procedure-box">
+                <div id="labelIdforFiels">Main procedure:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{{ procedure.main_type_of_procedure }}</div>
+                <div id="labelIdforFiels"><i class="bi bi-calendar-check-fill"></i> Date:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{{ procedure.date }}</div>
+                <div id="labelIdforFiels" style="margin-bottom: 10px;"> Hair washing: {% if procedure.washing_hair %}
+                    <i class="bi bi-check-circle"></i>{% else %}NO!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-palette"></i> Color type of procedure:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.color_type_of_procedure %}{{ procedure.color_type_of_procedure }}{% else %}No
+                    color!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-tag"></i> Product use for color:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">
+                    {% if procedure.product_used_for_color %}{{ procedure.product_used_for_color }}{% else %}No products
+                        use for color!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-scissors"></i> Cut type:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.cut_type_of_procedure %}{{ procedure.cut_type_of_procedure }}{% else %}No
+                    haircut!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-chat-dots"></i> Comment about haircut:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.comment_about_haircut %}{{ procedure.comment_about_haircut }}{% else %}No comment
+                    about
+                    haircut!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-gem"></i> Styling type:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.styling_type_of_procedure %}{{ procedure.styling_type_of_procedure }}{% else %}No
+                    styling!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-chat-dots"></i> Comment about styling type:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.comment_about_styling %}{{ procedure.comment_about_styling }}{% else %}No comment
+                    about styling!{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-bookmark-heart"></i> Treatment type:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.treatment_type_of_procedure %}{{ procedure.treatment_type_of_procedure }}{% else %}
+                    -{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-tag"></i> Products used for treatment:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.product_used_for_color %}{{ procedure.product_used_for_color }}{% else %}
+                    -{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-chat-dots"></i> Other comments:</div>
+                <div class="fst-italic" style="margin-bottom: 12px;">{% if procedure.other_comments %}{{ procedure.other_comments }}{% else %}-{% endif %}</div>
+                <div id="labelIdforFiels"><i class="bi bi-person-circle"></i>{{ procedure.customer.get_full_name }}
+                </div>
+                <div id="labelIdforPlainText">Before image / After image:</div>
+                <div>
+                    <img class="image-of-customers" src="{{ procedure.before_image.url }}" alt="Lights">
+                    <img class="image-of-customers" src="{{ procedure.after_image.url }}" alt="Lights">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% comment %}
+
+    comment_about_styling = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    treatment_type_of_procedure = models.CharField(
+        max_length=MAX_LEN_TREATMENT_TYPE_PROCEDURE,
+        choices=TREATMENT_TYPE_OF_PROCEDURE_CHOICES,
+        null=True,
+        blank=True,
+    )
+
+    product_used_for_treatment = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    other_comments = models.TextField(
+        null=True,
+        blank=True,
+    )
+
+    customer = models.ForeignKey(
+        AppCustomerUser,
+        on_delete=models.CASCADE,
+    )
+
+    before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
+    after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
+
+    date = models.DateTimeField(auto_now_add=True,)
+{% endcomment %}

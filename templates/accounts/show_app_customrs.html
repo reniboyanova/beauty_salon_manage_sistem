@@ -1,16 +1,19 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if customers %}
+        <li class="text-margin-left">
+        <ul class="list-group" style="margin-bottom: 20px;">
     {% for customer in customers %}
-        <div id="labelIdforPlainText">{{ customer.full_name_and_phone_number }}</div>
-        <div id="labelIdforPlainText">Customer's procedures <a href="{% url 'all customer procedures' pk=customer.pk%}" class="btn btn-outline-info" role="button"  id="buttonSubmision">Show
-            info</a></div>
+
+       <li class="list-group-item"><i class="bi bi-person-circle"></i> {{ customer.full_name_and_phone_number }}; <i class="bi bi-bookmark-heart"></i> Customer's procedures: <a href="{% url 'all customer procedures' pk=customer.pk%}" >Show
+            info</a></li>
+
     {% endfor %}
     {% else %}
     <div id="labelIdforPlainText">You don't have any customers yet!</div>
+        </ul>
     {% endif %}
-
-    <div id="labelIdforPlainText">
-        All beauty salon customers are: {{ customers.count }}!
-    </div>
+<ul class="list-group">
+    <li class="list-group-item">All beauty salon customers are: {{ customers.count }}!</li>
+</ul>
 {% endblock %}

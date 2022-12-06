@@ -9,8 +9,14 @@
     color: white;
     margin-bottom: 7px;
     font-size: 18px;
+    text-align: justify ;
+    border-bottom: 1px white;
 }
 
+#labelIdforNavbar {
+    color: white;
+    margin-right: 20px;
+}
 
 input {
     background: rgba(255, 255, 255, 0.4);
@@ -50,12 +56,13 @@ input:focus {
 }
 
 #buttonSubmision:active {
-    background-color: rgb(166, 127, 192);
+    background-color: rgb(196, 49, 189);
 }
 
 div.login-register-div {
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    margin-top: 30px;
 }
 
 .main-text-class {
@@ -84,6 +91,8 @@ div.login-register-div {
 div.box-in-center {
     margin: auto;
     font-family: "Gill Sans Extrabold", sans-serif;
+    top: 50%;
+    bottom: 50%;
 
 }
 
@@ -91,6 +100,8 @@ div.welcome-text-in-center {
     margin: auto;
     font-family: "Gill Sans Extrabold", sans-serif;
     text-align: center;
+    left: 50%;
+    right: 50%;
 
 }
 
@@ -100,10 +111,22 @@ div.just-in-center {
     justify-content: center
 }
 
+p.text-just-in-center {
+    text-align: center;
+    size: 20px;
+    color: white !important;
+}
+
+img.logo-size-class {
+    max-width: 100%;
+    height: auto;
+}
+
 div.logo-in-center {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
 div.login-register-box {

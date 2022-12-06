@@ -1,19 +1,48 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <div id="labelIdforPlainText">Number of products: {{ addproducts_list.count }}</div>
-    <div>
-        <a class="btn btn-info" href="{% url 'add product' %}" id="buttonSubmision">Add product</a>
-    </div>
-    <div>
-        <a href="{% url 'index page' %}" id="labelIdforFiels">Go
-            back</a>
-    </div>
+    {#    <div class="text-margin-left">#}
+    {#    <div id="labelIdforPlainText">Number of products: {{ addproducts_list.count }}</div>#}
+    {#    <div>#}
+    {#        <a class="btn btn-info" href="{% url 'add product' %}" id="buttonSubmision">Add product</a>#}
+    {#    </div>#}
+    {#    <div>#}
+    {#        <a href="{% url 'index page' %}" id="labelIdforFiels">Go#}
+    {#            back</a>#}
+    {#    </div>#}
     {% if user.is_authenticated and addproducts_list %}
-        <div>
-            <div id="labelIdforPlainText">List of our products:</div>
-            {% for product in addproducts_list %}
-                <div id="labelIdforPlainText">{{ product.information_about_product }}</div>
-            {% endfor %}
+        <div class="text-margin-left" id="labelIdforPlainText">List of our products:</div>
+        <div class="container">
+            <div class="row">
+                {% for product in addproducts_list %}
+                    <div class="col-sm-3 mb-4">
+                        <div class="card" style="width: 18rem; margin-left: 20px;">
+                            <img class="card-img-top" src="{{ product.image_of_product }}" alt="After image">
+                            <div class="card-body">
+                                <h5 class="card-title">Product brand: </h5>
+                                <p class="card-text"><i class="bi bi-tag"></i> {{ product.brand }}</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" class="font-weight-bold"><i class="bi bi-upc-scan"></i>
+                                    Serial
+                                    Number: {{ product.serial_number }}</li>
+                                <li class="list-group-item">Type: {{ product.type_of_product }}</li>
+                                <div class="card-body">
+                                    <a class="btn btn-outline-dark btn-sm"
+                                       href="{% url 'edit product' pk=product.pk %}">Edit</a>
+                                    <a class="btn btn-outline-dark btn-sm"
+                                       href="{% url 'delete product' pk=product.pk %}">Delete</a>
+                                    <a class="btn btn-info btn-sm" href="{% url 'add product' %}" id="buttonSmallAdd">Add
+                                        product</a>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+                <div class="text-margin-left">
+                    <div id="labelIdforPlainText">Does not heva any products yet!</div>
+                </div>
+            </div>
         </div>
     {% endif %}
 {% endblock %}

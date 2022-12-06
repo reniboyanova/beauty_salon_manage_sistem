@@ -1,23 +1,14 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    {% for procedure in procedure_list %}
-        <div id="labelIdforPlainText">Main type of procedure is: {{ procedure.main_type_of_procedure }} - {{ procedure.customer.get_full_name }}. Date: {{ procedure.date }}</div>
-{#        <div id="labelIdforPlainText">Before image:</div>#}
-{#        <div class="col-md-4">#}
-{#            <div class="thumbnail">#}
-{#                <a href="{{ procedure.before_image.url }}">#}
-{#                    <img src="{{ procedure.before_image.url }}" alt="Lights" style="width:50%">#}
-{#                </a>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div id="labelIdforPlainText">After image:</div>#}
-{#        <div class="col-md-4">#}
-{#            <div class="thumbnail">#}
-{#                <a href="{{ procedure.after_image_image.url }}">#}
-{#                    <img src="{{ procedure.after_image.url }}" alt="Lights" style="width:50%">#}
-{#                </a>#}
-{#            </div>#}
-        </div>
-    {% endfor %}
-    <div id="labelIdforPlainText">Number of all customer's procedures are: {{ procedure_list.count }}!</div>
+    <li class="text-margin-left">
+        <ul class="list-group" style="margin-bottom: 20px;">
+            {% for procedure in procedure_list %}
+                <li class="list-group-item"><i class="bi bi-calendar-check"></i>Date: {{ procedure.date }}; <i
+                        class="bi bi-person-circle"></i>Customer name: {{ procedure.customer.get_full_name }}; <i
+                        class="bi bi-bookmark-heart"></i>Main type of procedure
+                    is: {{ procedure.main_type_of_procedure }}; <i class="bi bi-person-check"></i>Hairstylist: {{ procedure.customer.hair_stylist.all|join:", " }}</li>
+            {% endfor %}
+            <ul class="list-group">
+                <li class="list-group-item">Number of all customer's procedures are: {{ procedure_list.count }}!</li>
+            </ul>
 {% endblock %}

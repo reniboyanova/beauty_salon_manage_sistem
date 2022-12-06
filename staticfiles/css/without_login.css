@@ -1,23 +1,3 @@
-body {
-    background-image: url('/static/images/black-background-1.jpg');
-    background-size: auto;
-    min-height: 100%;
-}
-
-
-nav.navbar {
-    background-image: url('/static/images/black-background-1.jpg');
-    font-family: "Gill Sans Extrabold", sans-serif;
-}
-
-html.login_page {
-    background-image: url('/static/images/girls.jpg');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: 80% 20%;
-    filter: grayscale(100%);
-}
-
 
 footer {
     /*background-image: url('/static/images/background-black-colors-952670.jpg');*/
@@ -29,7 +9,8 @@ footer {
     text-align: center;
     font-weight: bold;
     font-family: "Gill Sans Extrabold", sans-serif;
-    position: static;
+    position: fixed;
+!important;
 }
 
 .container-inline {
@@ -56,39 +37,33 @@ textarea {
 }
 
 .errors {
-    color: deeppink;
-    text-decoration: underline deeppink;
+    color: #c51244;
+    text-decoration: underline #c51244;
 }
 
-.container button {
+/*.centered {*/
+/*  position: absolute;*/
+/*  top: 50%;*/
+/*  left: 50%;*/
+/*  transform: translate(-50%, -50%);*/
+/*}*/
+
+.container .button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    color: deeppink;
+    color: white;
     font-size: 16px;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    background: none;
 }
 
-.centered {
-    text-shadow: 2px 2px white;
-    color: black;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 34px;
-    font-weight: bold;
+.container .btn:hover {
+    background-color: black;
 }
 
-h3.centered-info-page {
-    color: white;
-    text-align: center;
-    margin: 0;
-}

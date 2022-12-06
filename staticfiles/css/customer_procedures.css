@@ -1,0 +1,26 @@
+.image-of-customers {
+    max-width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-right: 20px;
+    border: 2px solid white;
+    border-radius: 7px;
+    margin-bottom: 50px;
+}
+
+.text-margin-left {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+/*#buttonSmallAdd {*/
+/*    background-color: deeppink;*/
+/*    color: white;*/
+
+
+/*}*/
+
+#buttonSmallAdd:hover {
+    background-color: white;
+    color: darkturquoise;
+}

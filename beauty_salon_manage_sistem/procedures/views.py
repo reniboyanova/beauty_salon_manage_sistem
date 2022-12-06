@@ -27,11 +27,17 @@ class AddProcedureToCustomer(CreateView):
 class ShowAllCustomersProcedure(ListView):
     template_name = 'procedures/show_all_customer_procedures.html'
     queryset = Procedure.objects.all()
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         customer_procedures = self.queryset.filter(customer__hair_stylist__user=self.request.user)
         context['customer_procedures'] = customer_procedures
         return context
+
+
+class ProcedureDetailView(DetailView):
+    template_name = 'procedures/full_information_customer_procedures.html'
+    model = Procedure
 
 
 class ProceduresDetailsView(ListView):

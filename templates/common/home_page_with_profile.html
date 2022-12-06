@@ -1,15 +1,14 @@
 {% extends 'common/index_page.html' %}
 {% load static %}
 {% block content %}
-    <div class="welcome-text-in-center">
-            <h1 id="labelIdforPlainText">Welcome to</h1>
-            <h1 id="labelIdforPlainText">Beauty Management System!</h1>
-        </div>
+{#    <div  class="just-in-center">#}
+{#            <h1 id="labelIdforPlainText">Welcome to</h1>#}
+{#            <h1 id="labelIdforPlainText">Beauty Management System!</h1>#}
+{#        </div>#}
         <div class="logo-in-center">
-            <img src="{% static '/images/BS (1).png' %}" alt="BeautyManagementSystem">
+            <img class="logo-size-class" src="{% static '/images/BS-logo.png' %}" alt="BeautyManagementSystem">
         </div>
         <div class="just-in-center">
             <a href="{% url 'all beauty salon procedures' %}" class="btn btn-outline-light" role="button" id="secondOrThirdButton">Last activities</a>
         </div>
-
 {% endblock %}

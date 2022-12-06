@@ -1,0 +1,28 @@
+{% extends 'common/index_page.html' %}
+{% block content %}
+    <div class="box-in-center">
+        <!-- Start Login Section-->
+        <div class="login-register-div">
+            <div class="login-register-box">
+                <form method="post" action="{% url 'edit product' pk=object.pk %}">
+                    {% for field in form %}
+                        <div>
+                            {% if field.errors %}
+                                 <div class="errors"> {{ field.errors }}</div>
+                            {% endif %}
+                            {% if field.label %}
+                                <div id="labelIdforFiels">{{ field.label }}</div>
+                            {% endif %}
+                            <div id="fieldsStyle">{{ field }}</div>
+                        </div>
+                    {% endfor %}
+                    <div><input name="next" type="hidden" value="{% url 'index page' %}"></div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" id="buttonSubmision">Edit</button>
+                    </div>
+                    {% csrf_token %}
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock %}

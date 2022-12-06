@@ -5,6 +5,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DetailView, D
 
 from beauty_salon_manage_sistem.accounts.forms import RegistrationAppUserForm, AddingCustomerForm
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
+from beauty_salon_manage_sistem.procedures.models import Procedure
 
 UserModel = get_user_model()
 

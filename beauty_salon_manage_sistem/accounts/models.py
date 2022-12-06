@@ -28,10 +28,15 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
         profile_full_name = AppStaffProfile.objects.get(pk=self.pk).get_full_name
         if profile_full_name:
             return f'{profile_full_name}'
-        return self.email
+        return f'{self.email}'
 
     def __str__(self):
-        return self.get_full_name_with_profile
+        if self.get_full_name_with_profile:
+            return self.get_full_name_with_profile
+        f'{self.email}'
+
+    class Meta:
+        verbose_name = 'User'
 
 
 class AppStaffProfile(models.Model):
@@ -47,8 +52,8 @@ class AppStaffProfile(models.Model):
 
     first_name = models.CharField(
         max_length=MAX_LEN_FIRST_NAME,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         validators=[
             validators.MinLengthValidator(MIN_LEN_FIRST_NAME),
             validate_only_letters,
@@ -57,8 +62,8 @@ class AppStaffProfile(models.Model):
 
     last_name = models.CharField(
         max_length=MAX_LEN_LAST_NAME,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         validators=[
             validators.MinLengthValidator(MIN_LEN_LAST_NAME),
             validate_only_letters,
@@ -67,8 +72,8 @@ class AppStaffProfile(models.Model):
 
     position = models.CharField(
         max_length=MAX_LEN_POSITION,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
     )
 
     @property
@@ -76,7 +81,9 @@ class AppStaffProfile(models.Model):
         return f'{self.first_name} {self.last_name}'
 
     def __str__(self):
-        return f'{self.get_full_name} - {self.position}'
+        if self.get_full_name:
+            return f'{self.get_full_name} - {self.position}'
+        return self.user.email
 
     class Meta:
         verbose_name = 'Staff'

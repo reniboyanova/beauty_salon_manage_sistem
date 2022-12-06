@@ -1,6 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    {% if request.user.is_superuser %}
+{#    {% if request.user.is_superuser %}#}
         <div class="box-in-center">
             <!-- Start Login Section-->
             <div class="login-register-div">
@@ -12,7 +12,7 @@
                              <div class="errors"> {{ field.errors }}</div>
                         {% endif %}
                         {% if field.label %}
-                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                            <div id="labelIdforFiels">{{ field.label }}</div>
                         {% endif %}
                         <div id="fieldsStyle">{{ field }}</div>
                     </div>
@@ -26,5 +26,5 @@
             </div>
         </div>
 
-    {% endif %}
+{#    {% endif %}#}
 {% endblock %}

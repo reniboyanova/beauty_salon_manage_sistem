@@ -1,6 +1,7 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if customers %}
+        <div class="text-margin-left">
         {% for customer in customers %}
             <div class="main-text-class" id="labelIdforPlainText">{{ customer.full_name_and_phone_number }}</div>
             <div class="main-text-class" id="labelIdforPlainText">Customer's procedures <a
@@ -20,4 +21,5 @@
     {% else %}
         <h3 id="labelIdforPlainText">No customers yet!</h3>
     {% endif %}
+</div>
 {% endblock %}

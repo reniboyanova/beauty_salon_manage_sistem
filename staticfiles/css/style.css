@@ -2,3 +2,5 @@
 @import "login.css";
 @import "adding_procedure.css";
 @import "adding_customer.css";
+@import "customer_procedures.css";
+@import "without_login.css";

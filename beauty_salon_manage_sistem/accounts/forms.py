@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
 from django.core import validators
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
@@ -66,8 +66,6 @@ class RegistrationAppUserForm(UserCreationForm):
             }),
 
         }
-
-
     def cleaned_data_fist_name(self):
         return self.cleaned_data['first_name']
 
@@ -120,7 +118,7 @@ class AppProfileEditForm(UserChangeForm):
 class AppUserEditForm(UserChangeForm):
     class Meta:
         model = UserModel
-        fields = "__all__"
+        fields = ('email',)
 
 
 class AppProfileDeleteForm(AddingCustomerForm):
