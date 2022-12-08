@@ -23,24 +23,24 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
 
     objects = AppBaseUserManager()
 
+
     @property
     def get_full_name_with_profile(self):
-        profile_full_name = AppStaffProfile.objects.get(pk=self.pk).get_full_name
-        if profile_full_name:
-            return f'{profile_full_name}'
-        return f'{self.email}'
+        if self.appstaffprofile is None:
+            return self.email
+        return f'{self.appstaffprofile.get_full_name} - {self.appstaffprofile.position}'
 
     def __str__(self):
-        if self.get_full_name_with_profile:
-            return self.get_full_name_with_profile
-        f'{self.email}'
+        return self.get_full_name_with_profile
 
     class Meta:
-        verbose_name = 'User'
+        verbose_name = 'Staff User'
+        default_permissions = ()
 
 
 class AppStaffProfile(models.Model):
     user = models.OneToOneField(AppBaseUser, primary_key=True, on_delete=CASCADE, )
+    USERNAME_FIELD = 'email'
 
     MIN_LEN_FIRST_NAME = 2
     MAX_LEN_FIRST_NAME = 40
@@ -86,7 +86,7 @@ class AppStaffProfile(models.Model):
         return self.user.email
 
     class Meta:
-        verbose_name = 'Staff'
+        verbose_name = 'Staff Profile'
 
 
 class AppCustomerUser(models.Model):

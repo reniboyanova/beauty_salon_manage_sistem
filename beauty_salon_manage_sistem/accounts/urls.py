@@ -1,11 +1,11 @@
 from django.urls import path, include
 
-from beauty_salon_manage_sistem.accounts.views import ShowAppUsers, CreateAppStaffUser, CreateCustomer, SignInView, \
+from beauty_salon_manage_sistem.accounts.views import ShowAppCustomers, CreateAppStaffUser, CreateCustomer, SignInView, \
     SignOutView, AppStaffProfileUpdateView, AppStaffProfileDetailsView, AppCustomerProfileDeleteView, \
     AppCustomerProfileUpdateView, SuperUserProfileDetailsView, ShowCurrentCustomerProcedure
 
 urlpatterns = (
-    path('show-users/', ShowAppUsers.as_view(), name='show users'),
+    path('show-users/', ShowAppCustomers.as_view(), name='show users'),
     path('register/', CreateAppStaffUser.as_view(), name='register user'),
     path('add-customer/', CreateCustomer.as_view(), name='add customer'),
     path('login/', SignInView.as_view(), name='login user'),

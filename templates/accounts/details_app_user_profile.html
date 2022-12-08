@@ -5,19 +5,24 @@
         {% for customer in customers %}
             <div class="main-text-class" id="labelIdforPlainText">{{ customer.full_name_and_phone_number }}</div>
             <div class="main-text-class" id="labelIdforPlainText">Customer's procedures <a
-                href="{% url 'procedures of customer' pk=customer.pk %}"
-                class="btn btn-outline-info btn-sm" role="button">Show
-            info</a>
-            <a href="{% url 'delete customer profile' pk=customer.pk %}"
-               class="btn btn-outline-info btn-sm" role="button">Delete
-                user</a>
-            <a href="{% url 'edit customer profile' pk=customer.pk %}"
-               class="btn btn-outline-info btn-sm" role="button">Edit
-                user</a>
-        </div>
+                    href="{% url 'procedures of customer' pk=customer.pk %}"
+                    class="btn btn-outline-info btn-sm" role="button">Show
+                info</a>
+                <a href="{% url 'delete customer profile' pk=customer.pk %}"
+                   class="btn btn-outline-info btn-sm" role="button">Delete
+                    user</a>
+                <a href="{% url 'edit customer profile' pk=customer.pk %}"
+                   class="btn btn-outline-info btn-sm" role="button">Edit
+                    user</a>
+            </div>
 
         {% endfor %}
-        <div id="labelIdforPlainText">Number of my customers are: {{ customers_count }}!</div>
+        <ul class="list-group">
+            <li class="list-group-item" style="background-color: grey; color: white">Number of my customers
+                are: {{ customers_count }}!
+            </li>
+        </ul>
+        {% include 'common/pagination.html' %}
     {% else %}
         <h3 id="labelIdforPlainText">No customers yet!</h3>
     {% endif %}

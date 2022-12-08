@@ -8,13 +8,13 @@
                     <form method="post" action="{% url 'add product' %}">
                          {% for field in form %}
                     <div>
-                        {% if field.errors %}
-                             <div class="errors"> {{ field.errors }}</div>
-                        {% endif %}
                         {% if field.label %}
                             <div id="labelIdforFiels">{{ field.label }}</div>
                         {% endif %}
                         <div id="fieldsStyle">{{ field }}</div>
+                    {% if field.errors %}
+                             <div class="alert alert-danger" role="alert" style="padding: 0; height: 50px;">{{ field.errors }}</div>
+                        {% endif %}
                     </div>
                 {% endfor %}
                 <div><input name="next" type="hidden" value="{% url 'add product' %}"></div>

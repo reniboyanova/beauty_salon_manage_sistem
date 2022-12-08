@@ -1,18 +1,19 @@
 from django.contrib.auth import get_user_model, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
 
 from beauty_salon_manage_sistem.accounts.forms import RegistrationAppUserForm, AddingCustomerForm
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
-from beauty_salon_manage_sistem.procedures.models import Procedure
 
 UserModel = get_user_model()
 
 
-class ShowAppUsers(ListView):
-    model = UserModel
+class ShowAppCustomers(ListView):
+    model = AppCustomerUser
     template_name = 'accounts/show_app_customrs.html'
+    paginate_by = 8
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -76,18 +77,13 @@ class AppStaffProfileDetailsView(DetailView):
         context['customers_count'] = self.object.appcustomeruser_set.count()
         context['customers'] = self.object.appcustomeruser_set.all()
 
-        # photos = self.object.photo_set.all(). \
-        #     prefetch_related('like_set')
-        #
-        # context['photos_count'] = photos.count()
-        # context['photo_likes'] = sum(x.like_set.count() for x in photos)
-
         return context
 
 
 class SuperUserProfileDetailsView(ListView):
     template_name = 'accounts/details_app_user_profile_for_superuser.html'
     model = UserModel
+    paginate_by = 8
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -100,6 +96,7 @@ class AppCustomerProfileDeleteView(DeleteView):
     success_url = reverse_lazy('index page with profile')
 
     template_name = "accounts/delete_appcustomer_profile.html"
+
 
 class AppCustomerProfileUpdateView(UpdateView):
     model = AppCustomerUser

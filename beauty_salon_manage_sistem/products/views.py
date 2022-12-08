@@ -8,6 +8,7 @@ from beauty_salon_manage_sistem.products.models import AddProducts
 class ProductDetailsView(ListView):
     template_name = 'products/display_products.html'
     model = AddProducts
+    paginate_by = 8
 
 
 class AddProductView(CreateView):

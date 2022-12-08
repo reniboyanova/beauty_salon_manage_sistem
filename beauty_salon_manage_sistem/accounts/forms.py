@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, UsernameField
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.core import validators
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
@@ -60,20 +60,13 @@ class RegistrationAppUserForm(UserCreationForm):
     class Meta:
         model = UserModel
         fields = ('email',)
+        exclude = ('is_active', 'is_staff', 'is_superuser', 'date_joined')
         widgets = {
             'email': forms.TextInput(attrs={
                 'placeholder': 'Enter your email',
             }),
 
-        }
-    def cleaned_data_fist_name(self):
-        return self.cleaned_data['first_name']
-
-    def cleaned_data_last_name(self):
-        return self.cleaned_data['last_name']
-
-    def cleaned_data_position(self):
-        return self.cleaned_data['position']
+       }
 
     def save(self, commit=True):
         user = super().save(commit=commit)
@@ -109,17 +102,16 @@ class AddingCustomerForm(forms.ModelForm):
         }
 
 
-class AppProfileEditForm(UserChangeForm):
+class AppProfileEditForm(RegistrationAppUserForm):
     class Meta:
         model = AppStaffProfile
-        fields = "__all__"
+        exclude = ('email', 'password1', 'password2')
 
 
 class AppUserEditForm(UserChangeForm):
     class Meta:
         model = UserModel
         fields = ('email',)
-
 
 class AppProfileDeleteForm(AddingCustomerForm):
     class Meta:
