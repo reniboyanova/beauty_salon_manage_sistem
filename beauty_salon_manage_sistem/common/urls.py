@@ -1,10 +1,11 @@
 from django.urls import path
 
 from beauty_salon_manage_sistem.common.views import \
-    IndexPageWithProfile, index_function_view, InfoPage
+    IndexPageWithProfile, index_function_view, InfoPage, search_customers
 
 urlpatterns = (
     path('', index_function_view, name='index page'),
     path('sign-in/', IndexPageWithProfile.as_view(), name='index page with profile'),
     path('info-page/', InfoPage.as_view(), name='info page'),
+    path('search-customers/', search_customers, name='search customers'),
 )

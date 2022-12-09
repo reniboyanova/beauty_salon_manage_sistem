@@ -14,3 +14,4 @@ def validate_image_size(obj):
     if filesize > megabyte_limit*1024*1024:
         message = f"The maximum file size that can be uploaded is {megabyte_limit}MB"
         raise ValidationError(message)
+

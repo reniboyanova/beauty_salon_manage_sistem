@@ -12,7 +12,7 @@
                         {% endif %}
                         <div id="fieldsStyle">{{ field }}</div>
                         {% if field.errors %}
-                             <div class="alert alert-danger" role="alert" style="padding: 0; height: 50px;">{{ field.errors }}</div>
+                             <div class="alert alert-danger" role="alert" style="padding: 0; height: 50px; marker: none">{{ field.errors }}</div>
                         {% endif %}
                     </div>
                 {% endfor %}

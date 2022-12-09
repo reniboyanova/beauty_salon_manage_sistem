@@ -85,13 +85,16 @@
             {% if user.is_authenticated %}
                 <li class="d-flex">
                     <a class="nav-link disabled" href="#" tabindex="-1"
-                       aria-disabled="true" id="labelIdforNavbar">Hello, {{ user.get_full_name_with_profile }}!</a>
+                       aria-disabled="true" style="color: white; margin-right: 2px;">Hello, {{ user.get_full_name_with_profile }}!</a> <span class="badge badge-pill badge-info" style="background-color: grey; color: white; text-align: center; margin-left: 5px; margin-right: 5px;">{{ user.appstaffprofile.position }}</span>
                 </li>
             {% endif %}
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        {% if user.is_authenticated %}
+            <form class="d-flex" action="{% url 'search customers' %}" method="post">
+            {% csrf_token %}
+                <input class="form-control me-2" type="search" placeholder="Search in customers" aria-label="Search" name="search">
                 <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
+        {% endif %}
         </div>
     </div>
 </nav>

@@ -1,22 +1,10 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    {% if customers %}
         <li class="text-margin-left">
         <ul class="list-group" style="margin-bottom: 20px;">
-    {% for customer in page_obj %}
-
+    {% for customer in searched_customers %}
        <li class="list-group-item"><i class="bi bi-person-circle"></i> {{ customer.full_name_and_phone_number }}; <i class="bi bi-bookmark-heart"></i> Customer's procedures: <a href="{% url 'all customer procedures' pk=customer.pk%}" >Show
             info</a></li>
     {% endfor %}
-        <ul class="list-group">
-    <li class="list-group-item" style="background-color: grey; color: white">All beauty salon customers are: {{ customers.count }}!</li>
-</ul>
-         {# Pagination #}
-        {% include 'common/pagination.html' %}
-        {# End Pagination #}
-    {% else %}
-    <div id="labelIdforPlainText">You don't have any customers yet!</div>
         </ul>
-    {% endif %}
-
 {% endblock %}

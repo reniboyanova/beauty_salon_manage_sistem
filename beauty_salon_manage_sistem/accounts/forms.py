@@ -10,6 +10,7 @@ from beauty_salon_manage_sistem.procedures.models import Procedure
 UserModel = get_user_model()
 
 
+# Registration App User with adding Profile
 class RegistrationAppUserForm(UserCreationForm):
     MIN_LEN_FIRST_NAME = 2
     MAX_LEN_FIRST_NAME = 40
@@ -48,13 +49,16 @@ class RegistrationAppUserForm(UserCreationForm):
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
-            'label': 'Password'
         }),
+        error_messages=(),
+        label='Password'
     )
     password2 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Repeat password',
-        })
+        }),
+        error_messages=(),
+        label='Repeat Password'
     )
 
     class Meta:
@@ -82,16 +86,17 @@ class RegistrationAppUserForm(UserCreationForm):
         return user
 
 
+# Adding Customer form. This is NOT a registration form!
 class AddingCustomerForm(forms.ModelForm):
     class Meta:
         model = AppCustomerUser
         exclude = ('date_of_join', 'is_staff', 'is_superuser',)
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'col-sm-5 col-form-label'}, ),
+            'first_name': forms.TextInput(attrs={'class': 'col-sm-5 col-form-label'}),
             'last_name': forms.TextInput(attrs={
                 'class': 'col-sm-5 col-form-label'}),
             'phone_number': forms.TextInput(attrs={
-                'placeholder': '+359888888888', 'class': 'col-sm-5 col-form-label'}),
+                'placeholder': '+359123456789', 'class': 'col-sm-5 col-form-label',}),
             'further_explanation': forms.Textarea(attrs={
                 'placeholder': 'Add more information about customer'}),
             'hair_type': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
@@ -99,6 +104,11 @@ class AddingCustomerForm(forms.ModelForm):
             'hair_long': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
             'gender': forms.Select(attrs={'class': 'col-sm-5 col-form-label', }),
 
+        }
+
+        error_messages = {
+            'phone_number': {'required': 'Add a phone number!'},
+            'hair_stylist': {'required': 'This is required!'}
         }
 
 

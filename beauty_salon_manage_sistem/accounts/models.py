@@ -8,6 +8,7 @@ from beauty_salon_manage_sistem.accounts.managers import AppBaseUserManager
 from beauty_salon_manage_sistem.core.validators import validate_only_letters
 
 
+# User - Staff
 class AppBaseUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         unique=True,
@@ -23,21 +24,21 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
 
     objects = AppBaseUserManager()
 
-
     @property
     def get_full_name_with_profile(self):
         if self.appstaffprofile is None:
             return self.email
-        return f'{self.appstaffprofile.get_full_name} - {self.appstaffprofile.position}'
+        return f'{self.appstaffprofile.get_full_name}'
 
     def __str__(self):
-        return self.get_full_name_with_profile
+        return f'{self.get_full_name_with_profile} - - {self.appstaffprofile.position}'
 
     class Meta:
         verbose_name = 'Staff User'
         default_permissions = ()
 
 
+# UserProfile - Staff
 class AppStaffProfile(models.Model):
     user = models.OneToOneField(AppBaseUser, primary_key=True, on_delete=CASCADE, )
     USERNAME_FIELD = 'email'
@@ -89,6 +90,7 @@ class AppStaffProfile(models.Model):
         verbose_name = 'Staff Profile'
 
 
+# Customer Model - NOT USER!
 class AppCustomerUser(models.Model):
     MIN_LEN_FIRST_NAME = 2
     MAX_LEN_FIRST_NAME = 40
@@ -125,7 +127,6 @@ class AppCustomerUser(models.Model):
     MAX_LEN_FURTHER_EXPLANATION = 250
 
     hair_stylist = models.ManyToManyField(AppStaffProfile, verbose_name='Hair stylist:')
-
 
     first_name = models.CharField(
         max_length=MAX_LEN_FIRST_NAME,
