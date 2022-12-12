@@ -1,18 +1,17 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    <div class="box-in-center">
-    <!-- Start Login Section-->
-    <div class="adding-procedure-div">
+    <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
         <div class="adding-procedure-box">
     <form method="post" action="{% url 'add procedure to customer'%}" enctype="multipart/form-data">
          {% for field in form %}
                     <div>
                         {% if field.label %}
-                            <div id="labelIdforFiels">{{ field.label }}:</div>
+                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ field.label }}</div>
                         {% endif %}
                         <div id="addingProcedure">{{ field }}</div>
                     {% if field.errors %}
-                             <div class="alert alert-danger" role="alert" style="padding: 0; height: 50px;">{{ field.errors }}</div>
+                             <div class="alert alert-danger d-flex align-items-center justify-content-center h-100" role="alert" style="padding: 0;">{{ field.errors }}</div>
                         {% endif %}
                     </div>
                 {% endfor %}

@@ -1,15 +1,30 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    {% for procedure in customer_procedures %}
-        <div class="text-margin-left">
-        <div id="labelIdforPlainText">Main type of procedure is: {{ procedure.main_type_of_procedure }}</div>
-        <div id="labelIdforPlainText">Before image / After image:</div>
-        <div>
-            <img class="image-of-customers" src="{{ procedure.before_image.url }}" alt="Lights">
-            <img class="image-of-customers" src="{{ procedure.after_image.url }}" alt="Lights">
-        </div>
-    {% endfor %}
-<div id="labelIdforPlainText">Number of all customer's procedures are: {{ customer_procedures.count }}!</div>
+{% if customer_procedures %}
+    <div class="container" style="margin-left: 20px;">
+            <div class="row">
+        {% for procedure in page_obj %}
+            <div class="col-sm-3 mb-4">
+            <div class="card" style="width: 18rem;">
+  <img class="card-img-top" style="height: 380px;" src="{{ procedure.after_image.url }}" alt="After image">
+  <div class="card-body">
+    <h5 class="card-title">After image of last procedure</h5>
+    <p class="card-text"><i class="bi bi-person-circle"></i>Main type of procedure is: {{ procedure.main_type_of_procedure }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="bi bi-calendar-check-fill"></i> {{ procedure.date }}</li>
+    <li class="list-group-item">Number of customer's procedures are: {{ customer_procedures.count }}!</li>
+  </ul>
+  <div class="card-body">
+    <a class="btn btn-info btn-sm" href="{% url 'full information for procedure' pk=procedure.pk %}" id="buttonSmallAdd">Full information</a>
+  </div>
 </div>
-    {% include 'common/pagination.html' %}
+            </div>
+        {% endfor %}
+            </div>
+         </div>
+    {% else %}
+        <h2 id="labelIdforPlainText" style="margin-left: 20px;">No procedures!</h2>
+    {% endif %}
+<div style="margin-left: 20px;" >{% include 'common/pagination.html' %}</div>
 {% endblock %}

@@ -1,3 +1,5 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
@@ -9,7 +11,7 @@ from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
 #     template_name = 'common/index_page.html'
 
 
-class IndexPageWithProfile(TemplateView):
+class IndexPageWithProfile(LoginRequiredMixin, TemplateView):
     template_name = 'common/home_page_with_profile.html'
 
 
@@ -24,6 +26,7 @@ def index_function_view(request):
     return render(request, 'common/home_page_without_log_in.html')
 
 
+@login_required
 def search_customers(request):
     if request.method == 'POST':
         search = request.POST['search']
@@ -32,3 +35,7 @@ def search_customers(request):
         return render(request, 'common/search_customers.html', context=context)
     else:
         return render(request, 'common/search_customers.html', {})
+
+
+def handle_not_found(request, exception):
+    return render(request, '404.html')

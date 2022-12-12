@@ -42,4 +42,7 @@ class AddProducts(models.Model):
     def __str__(self):
         return f'{self.brand} - {self.type_of_product} with serial #{self.serial_number}'
 
+    class Meta:
+        verbose_name_plural = 'Product list'
+
 

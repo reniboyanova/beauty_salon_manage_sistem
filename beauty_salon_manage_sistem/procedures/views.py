@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView
 
@@ -5,7 +6,7 @@ from beauty_salon_manage_sistem.procedures.forms import AddProcedureToCustomerFo
 from beauty_salon_manage_sistem.procedures.models import Procedure
 
 
-class AddProcedureToCustomer(CreateView):
+class AddProcedureToCustomer(LoginRequiredMixin, CreateView):
     template_name = 'procedures/adding_procedure_to_customer.html'
     form_class = AddProcedureToCustomerForm
     success_url = reverse_lazy('add procedure to customer')
@@ -22,7 +23,7 @@ class AddProcedureToCustomer(CreateView):
             return self.form_invalid(form)
 
 
-class ShowAllCustomersProcedure(ListView):
+class ShowAllCustomersProcedure(LoginRequiredMixin, ListView):
     template_name = 'procedures/show_all_customer_procedures.html'
     queryset = Procedure.objects.all()
     paginate_by = 8
@@ -34,12 +35,12 @@ class ShowAllCustomersProcedure(ListView):
         return context
 
 
-class ProcedureDetailView(DetailView):
+class ProcedureDetailView(LoginRequiredMixin, DetailView):
     template_name = 'procedures/full_information_customer_procedures.html'
     model = Procedure
 
 
-class AllProceduresDetailsView(ListView):
+class AllProceduresDetailsView(LoginRequiredMixin, ListView):
     template_name = 'procedures/all_beauty_salon_procedures.html'
     model = Procedure
     paginate_by = 16

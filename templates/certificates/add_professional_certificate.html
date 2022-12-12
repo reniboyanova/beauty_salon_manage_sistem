@@ -2,10 +2,10 @@
 {% load custom_filters %}
 {% block content %}
 {% if user|has_group:"Managers" %}
- <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+<div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
                 <div class="login-register-box">
-                    <form method="post" action="{% url 'add product' %}">
+                    <form method="post" action="{% url 'add certificate' %}">
                          {% for field in form %}
                     <div>
                         {% if field.label %}
@@ -17,7 +17,7 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-                <div><input name="next" type="hidden" value="{% url 'add product' %}"></div>
+{#                <div><input name="next" type="hidden" value="{% url '' %}"></div>#}
                 <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Add</button></div>
                 {% csrf_token %}
                         {% csrf_token %}

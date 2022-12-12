@@ -1,15 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-    {#    <div class="text-margin-left">#}
-    {#    <div id="labelIdforPlainText">Number of products: {{ addproducts_list.count }}</div>#}
-    {#    <div>#}
-    {#        <a class="btn btn-info" href="{% url 'add product' %}" id="buttonSubmision">Add product</a>#}
-    {#    </div>#}
-    {#    <div>#}
-    {#        <a href="{% url 'index page' %}" id="labelIdforFiels">Go#}
-    {#            back</a>#}
-    {#    </div>#}
-    {% if user.is_authenticated and addproducts_list %}
+    {% if user.is_authenticated and page_obj %}
         <div class="text-margin-left" id="labelIdforPlainText">List of our products:</div>
         <div class="container">
             <div class="row">
@@ -38,9 +29,10 @@
                         </div>
                     </div>
                 {% endfor %}
+            {% include 'common/pagination.html' %}
                 {% else %}
-                <div class="text-margin-left">
-                    <div id="labelIdforPlainText">Does not heva any products yet!</div>
+                <div>
+                    <h3 style="text-align: center; color: white;">Does not have any products yet!</h3>
                 </div>
             </div>
         </div>

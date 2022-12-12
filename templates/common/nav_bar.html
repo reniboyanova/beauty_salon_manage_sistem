@@ -32,23 +32,20 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="{% url 'edit user' pk=user.pk %}">Edit
-                                    profile</a></li>
-                                <li><a class="dropdown-item"
-                                       href="{% url 'user details'  pk=user.pk %}">My customers</a></li>
-                    {% if user|has_group:"Managers" %}
+                            <li><a class="dropdown-item" href="{% url 'edit user' pk=user.pk %}">Edit my
+                                profile</a></li>
+                            <li><a class="dropdown-item"
+                                   href="{% url 'user details'  pk=user.pk %}">My customers</a></li>
+                            {% if user|has_group:"Managers" %}
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
                                 <li><a class="dropdown-item"
                                        href="{% url 'superuser details'  pk=request.user.pk %}">Details Staffs</a></li>
                                 <li>
+                                <li><a class="dropdown-item" href="{% url 'add certificate' %}">Add Certificates</a>
+                                </li>
                             {% endif %}
-                            {#                            <hr class="dropdown-divider">#}
                             </li>
-                            {#                            {% if user.is_superuser %}#}
-                            {#                                <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>#}
-                            {#                            {% else %}#}
-                            {#                                <li><a class="nav-link disabled" href="{% url 'register user' %}" aria-disabled="true">Register#}
-                            {#                                    Staff</a></li>#}
-                            {#                            {% endif %}#}
                         </ul>
                     </li>
 
@@ -59,18 +56,29 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{% url 'show users' %}">All customers</a></li>
-                            <li><a class="dropdown-item" href="{% url 'add procedure to customer' %}">Add a
-                                procedures</a></li>
-                            <li><a class="dropdown-item" href="{% url 'add customer' %}">Add new customer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add procedure to customer' %}">Add
+                                procedure to customer</a></li>
                             <hr class="dropdown-divider">
-                            <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
-
+                            <li><a class="dropdown-item" href="{% url 'add customer' %}">Add new customer</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'detail product' %}">Products</a>
-                    </li>
-
+                    {% if user|has_group:"Managers" %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'detail product' %}">All products</a></li>
+                                <li><a class="dropdown-item" href="{% url 'add product' %}">Add product</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if user|has_group:"Staff group" %}
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{% url 'detail product' %}">Products</a>
+                        </li>
+                    {% endif %}
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'login user' %}">Log in</a>
@@ -85,16 +93,22 @@
             {% if user.is_authenticated %}
                 <li class="d-flex">
                     <a class="nav-link disabled" href="#" tabindex="-1"
-                       aria-disabled="true" style="color: white; margin-right: 2px;">Hello, {{ user.get_full_name_with_profile }}!</a> <span class="badge badge-pill badge-info" style="background-color: grey; color: white; text-align: center; margin-left: 5px; margin-right: 5px;">{{ user.appstaffprofile.position }}</span>
+                       aria-disabled="true"
+                       style="color: white; margin-right: 2px;">Hello, {{ user.get_full_name_with_profile }}!</a>
+                    <span
+                            class="badge badge-pill badge-info"
+                            style="background-color: grey; color: white; text-align: center; margin-left: 5px; margin-right: 5px;">{{ user.appstaffprofile.position }}</span>
                 </li>
             {% endif %}
-        {% if user.is_authenticated %}
-            <form class="d-flex" action="{% url 'search customers' %}" method="post">
-            {% csrf_token %}
-                <input class="form-control me-2" type="search" placeholder="Search in customers" aria-label="Search" name="search">
-                <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
-        {% endif %}
+            {% if user.is_authenticated %}
+                <form class="d-flex" action="{% url 'search customers' %}" method="post">
+                    {% csrf_token %}
+                    <input class="form-control me-2" type="search" placeholder="Search in customers"
+                           aria-label="Search"
+                           name="search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            {% endif %}
         </div>
     </div>
 </nav>

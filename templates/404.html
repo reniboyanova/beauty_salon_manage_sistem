@@ -1,0 +1,14 @@
+{% extends 'common/index_page.html' %}
+{% load static %}
+{% block content %}
+    <h1 style="color: white; size: 100px; text-align: center;">Something is missing.</h1>
+    <h3 style="color: deeppink; size: 80px; text-align: center;">The page you looking is not found.</h3>
+    <div class="just-in-center">
+        <a href="{% url 'index page with profile' %}" class="btn btn-outline-light" role="button"
+           id="secondOrThirdButton">Go back!</a>
+    </div>
+    <div class="logo-in-center">
+        <img src="{% static '/images/Want something new for your beauty business.png' %}" alt="404 image"
+             style="height: 50%; width: 50%;">
+    </div>
+{% endblock %}

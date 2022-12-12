@@ -7,12 +7,14 @@ from beauty_salon_manage_sistem.core.validators import validate_image_size
 
 # TODO да изнеса различните CHOICES в отделен файл с клас и пропъртита
 
-# TODO да оправя хардкоднатите стойности
-
-# TODO да сложа снимки "Преди" и "След"
-
 
 class Procedure(models.Model):
+    MAX_LEN_CHOICES = 1000
+
+    MAX_CHOICES = 4
+
+    MAX_LEN_COLOR_TYPE_OF_PROCEDURE = 30
+
     MAIN_TYPE_OF_PROCEDURE_CHOICES = (
         ('Cut', 'Cut'),
         ('Color', 'Color'),
@@ -58,28 +60,31 @@ class Procedure(models.Model):
 
     main_type_of_procedure = MultiSelectField(
         choices=MAIN_TYPE_OF_PROCEDURE_CHOICES,
-        max_length=1000,
-        max_choices=4,
+        max_length=MAX_LEN_CHOICES,
+        max_choices=MAX_CHOICES,
         null=False,
         blank=False,
+        verbose_name='Main type of procedure:'
     )
 
     washing_hair = models.BooleanField(
-        default='Yes',
         null=False,
         blank=True,
+        verbose_name='Is hair washing included? (Yes/No):'
     )
 
     color_type_of_procedure = MultiSelectField(
         choices=COLOR_TYPE_OF_PROCEDURE_CHOICES,
         null=True,
         blank=True,
-        max_length=30,
+        max_length=MAX_LEN_COLOR_TYPE_OF_PROCEDURE,
+        verbose_name='Type of hair coloring:'
     )
 
     product_used_for_color = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Products used for coloring:'
     )
 
     cut_type_of_procedure = models.CharField(
@@ -87,11 +92,13 @@ class Procedure(models.Model):
         choices=CUT_TYPE_OF_PROCEDURE_CHOICES,
         null=True,
         blank=True,
+        verbose_name='Haircut type:'
     )
 
     comment_about_haircut = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Comment about haircut:'
     )
 
     styling_type_of_procedure = models.CharField(
@@ -99,11 +106,13 @@ class Procedure(models.Model):
         choices=STYLING_TYPE_OF_PROCEDURE_CHOICES,
         null=True,
         blank=True,
+        verbose_name='Hair styling services:'
     )
 
     comment_about_styling = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Comment about hair styling:'
     )
 
     treatment_type_of_procedure = models.CharField(
@@ -111,16 +120,19 @@ class Procedure(models.Model):
         choices=TREATMENT_TYPE_OF_PROCEDURE_CHOICES,
         null=True,
         blank=True,
+        verbose_name='Treatment procedure:'
     )
 
     product_used_for_treatment = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Products used for treatment:'
     )
 
     other_comments = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Other comments:'
     )
 
     customer = models.ForeignKey(
