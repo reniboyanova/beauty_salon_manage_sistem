@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
@@ -23,6 +24,7 @@ class ShowAppCustomers(LoginRequiredMixin, ListView):
         context['my_booking_hours'] = UserModel.objects.filter()
 
         return context
+
 
 
 class CreateAppStaffUser(CreateView):
