@@ -12,7 +12,7 @@ UserModel = get_user_model()
 
 class ShowAppCustomers(LoginRequiredMixin, ListView):
     model = AppCustomerUser
-    template_name = 'accounts/show_app_customrs.html'
+    template_name = 'accounts/customers_accounts/show_app_customrs.html'
     paginate_by = 8
 
     def get_context_data(self, *args, **kwargs):
@@ -26,7 +26,7 @@ class ShowAppCustomers(LoginRequiredMixin, ListView):
 
 
 class CreateAppStaffUser(CreateView):
-    template_name = 'accounts/staff_creation_form.html'
+    template_name = 'accounts/users_accounts/staff_creation_form.html'
     form_class = RegistrationAppUserForm
     success_url = reverse_lazy('index page with profile')
 
@@ -39,13 +39,13 @@ class CreateAppStaffUser(CreateView):
 
 
 class CreateAppStaffUserFromManager(CreateView):
-    template_name = 'accounts/staff_creation_from_manager.html'
+    template_name = 'accounts/users_accounts/staff_creation_from_manager.html'
     form_class = RegistrationAppUserForm
     success_url = reverse_lazy('add staff')
 
 
 class CreateCustomer(LoginRequiredMixin, CreateView):
-    template_name = 'accounts/adding_customer.html'
+    template_name = 'accounts/customers_accounts/adding_customer.html'
     form_class = AddingCustomerForm
     success_url = reverse_lazy('add customer')
 
@@ -67,14 +67,14 @@ class SignOutView(LoginRequiredMixin, LogoutView):
 class AppStaffProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = AppStaffProfile
     fields = ('first_name', 'last_name', 'position')
-    template_name = 'accounts/edit_app_user_profile.html'
+    template_name = 'accounts/users_accounts/edit_app_user_profile.html'
 
     def get_success_url(self):
         return reverse_lazy('index page with profile')
 
 
 class AppStaffProfileDetailsView(DetailView):
-    template_name = 'accounts/details_app_user_profile.html'
+    template_name = 'accounts/users_accounts/details_app_user_profile.html'
     model = AppStaffProfile
 
     def get_context_data(self, **kwargs):
@@ -88,7 +88,7 @@ class AppStaffProfileDetailsView(DetailView):
 
 
 class SuperUserProfileDetailsView(LoginRequiredMixin, ListView):
-    template_name = 'accounts/details_app_user_profile_for_superuser.html'
+    template_name = 'accounts/users_accounts/details_app_user_profile_for_superuser.html'
     model = UserModel
     paginate_by = 8
 
@@ -103,13 +103,13 @@ class AppCustomerProfileDeleteView(LoginRequiredMixin, DeleteView):
     form_class = AppProfileDeleteForm
     success_url = reverse_lazy('index page with profile')
 
-    template_name = "accounts/delete_appcustomer_profile.html"
+    template_name = "accounts/customers_accounts/delete_appcustomer_profile.html"
 
 
 class AppCustomerProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = AppCustomerUser
     fields = ('hair_stylist', 'last_name', 'phone_number', 'hair_long', 'hair_type',)
-    template_name = 'accounts/edit_appcustomer_profile.html'
+    template_name = 'accounts/customers_accounts/edit_appcustomer_profile.html'
 
     def get_success_url(self):
         return reverse_lazy('index page with profile')

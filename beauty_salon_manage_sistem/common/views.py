@@ -41,13 +41,13 @@ def handle_not_found(request, exception):
 
 
 class BookingCreateView(LoginRequiredMixin, CreateView):
-    template_name = 'common/booking_customer_procedure.html'
+    template_name = 'common/booking_procedure/booking_customer_procedure.html'
     form_class = BookingForm
     success_url = reverse_lazy('index page with profile')
 
 
 class BookingListView(LoginRequiredMixin, ListView):
-    template_name = 'common/list_booking_customer.html'
+    template_name = 'common/booking_procedure/list_booking_customer.html'
     queryset = BookingCustomerProcedure.objects.all()
     success_url = reverse_lazy('index page with profile')
     paginate_by = 4
@@ -62,6 +62,6 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
     model = BookingCustomerProcedure
     success_url = reverse_lazy('my booking hours')
     form_class = BookingFormDeleteForm
-    template_name = 'common/delete_booking_procedure.html'
+    template_name = 'common/booking_procedure/delete_booking_procedure.html'
 
 
