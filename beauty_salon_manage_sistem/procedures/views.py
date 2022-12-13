@@ -26,7 +26,6 @@ class AddProcedureToCustomer(LoginRequiredMixin, CreateView):
 class ShowAllCustomersProcedure(LoginRequiredMixin, ListView):
     template_name = 'procedures/show_all_customer_procedures.html'
     queryset = Procedure.objects.all()
-    paginate_by = 8
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)

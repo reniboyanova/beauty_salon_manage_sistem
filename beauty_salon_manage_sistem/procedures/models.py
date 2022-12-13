@@ -1,12 +1,9 @@
+from django.utils.text import slugify
 from multiselectfield import MultiSelectField
 from django.db import models
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
 from beauty_salon_manage_sistem.core.validators import validate_image_size
-
-
-# TODO да изнеса различните CHOICES в отделен файл с клас и пропъртита
-
 
 class Procedure(models.Model):
     MAX_LEN_CHOICES = 1000

@@ -1,70 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="'Read me' change">
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/certificates/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/certificates/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/certificates/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/certificates/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/migrations/0002_alter_procedure_color_type_of_procedure_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/migrations/0002_alter_addproducts_options.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (1).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (2).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (3).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (4).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (5).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (6).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/1 (7).jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/Want something new for your beauty business.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/bsm_info_page.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/bsm_info_page_2.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/bsm_info_page_2_1.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/bsm_info_page_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/info.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/info_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/turqoise1.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/staticfiles/images/turqoise_2.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/certificates/add_professional_certificate.html" afterDir="false" />
+    <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="Changes about templates, views, groups permissions">
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/migrations/0002_alter_bookingcustomerprocedure_options_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/envs/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/envs/.env.prod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/images/3.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/images/4.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/images/RetroSalonGirls.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/staff_creation_from_manager.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/common/booking_customer_procedure.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/common/delete_booking_procedure.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/common/list_booking_customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92/storage_v2/_src_/database/beauty_system_db.i7x4Kw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f0992256-354f-41db-b2ad-1309204b3a92/storage_v2/_src_/database/beauty_system_db.i7x4Kw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/profile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/templatetags/custom_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/templatetags/custom_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/common/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/procedures/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/products/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/css/adding_customer.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/adding_customer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/css/customer_procedures.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/customer_procedures.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/css/home_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/home_page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/staticfiles/css/without_login.css" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/css/without_login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/1483805469.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/BS (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/images/BS logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/BS.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/background-black-colors-952670.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/background2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/beauty20salon-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/black-background-2.jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/hairdressers.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/images (6).jfif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/info_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/staticfiles/images/info_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/info_page_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/staticfiles/images/info_page_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/images/1 (6).jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/images/turqoise1.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/staticfiles/images/turqoise_2.jfif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/adding_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/adding_customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/delete_appcustomer_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/delete_appcustomer_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/details_app_user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/details_app_user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/details_app_user_profile_for_superuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/details_app_user_profile_for_superuser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/edit_app_user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit_app_user_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/edit_appcustomer_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/edit_appcustomer_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/login_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/login_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/accounts/show_app_customrs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/show_app_customrs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/accounts/staff_creation_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/accounts/staff_creation_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/certificates/add_professional_certificate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/certificates/add_professional_certificate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/home_page_without_log_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/home_page_without_log_in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/index_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/index_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/info_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/info_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/common/nav_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/nav_bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/pagination.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common/search_customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common/search_customers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/procedures/adding_procedure_to_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/procedures/adding_procedure_to_customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/procedures/full_information_customer_procedures.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/procedures/full_information_customer_procedures.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/procedures/show_all_customer_procedures.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/procedures/show_all_customer_procedures.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/procedures/show_current_customer_procedure.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/procedures/show_current_customer_procedure.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/products/add_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products/add_products.html" afterDir="false" />
@@ -84,8 +72,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -110,28 +98,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nitro/Desktop/Phyton Projects/djangoProject/petstagram",
-    "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitro/Desktop/Phyton Projects/beauty_salon_manage_sistem/staticfiles/images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\staticfiles\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\beauty_salon_manage_sistem" />
+      <recent name="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\envs" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.beauty_salon_manage_sistem">
@@ -163,11 +153,22 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="beauty_salon_manage_sistem.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\nitro\Desktop\Phyton Projects\beauty_salon_manage_sistem\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH="beauty_salon_manage_sistem/envs/.env" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -179,6 +180,10 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.beauty_salon_manage_sistem" />
+      <item itemvalue="Django tests.Test: tests.accounts.models_test.AppUserProfileTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Django tests.Test: tests.accounts.models_test.AppUserProfileTest" />
@@ -231,7 +236,10 @@
       <workItem from="1670699539256" duration="3667000" />
       <workItem from="1670703244775" duration="1825000" />
       <workItem from="1670741683812" duration="8573000" />
-      <workItem from="1670774378518" duration="6089000" />
+      <workItem from="1670774378518" duration="19434000" />
+      <workItem from="1670850093227" duration="13941000" />
+      <workItem from="1670866704204" duration="7622000" />
+      <workItem from="1670907814310" duration="5324000" />
     </task>
     <task id="LOCAL-00001" summary="first sceleton">
       <created>1668586863314</created>
@@ -345,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670582815219</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Changes about templates, views, groups permissions">
+      <created>1670836731832</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670836731832</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +392,8 @@
     <MESSAGE value="Add pagination, make some changes about errors in forms, adding redis cache" />
     <MESSAGE value="Add pagination, work on info page" />
     <MESSAGE value="'Read me' change" />
-    <option name="LAST_COMMIT_MESSAGE" value="'Read me' change" />
+    <MESSAGE value="Changes about templates, views, groups permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes about templates, views, groups permissions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

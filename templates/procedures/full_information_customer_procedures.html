@@ -42,45 +42,10 @@
                 </div>
                 <div id="labelIdforPlainText">Before image / After image:</div>
                 <div>
-                    <img class="image-of-customers" src="{{ procedure.before_image.url }}" alt="Lights">
-                    <img class="image-of-customers" src="{{ procedure.after_image.url }}" alt="Lights">
+                    <img class="image-of-customers" src="{{ procedure.before_image.url }}" alt="Before Image of {{ procedure.customer }}">
+                    <img class="image-of-customers" src="{{ procedure.after_image.url }}" alt="After image of {{ procedure.customer }}">
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
-
-{% comment %}
-
-    comment_about_styling = models.TextField(
-        null=True,
-        blank=True,
-    )
-
-    treatment_type_of_procedure = models.CharField(
-        max_length=MAX_LEN_TREATMENT_TYPE_PROCEDURE,
-        choices=TREATMENT_TYPE_OF_PROCEDURE_CHOICES,
-        null=True,
-        blank=True,
-    )
-
-    product_used_for_treatment = models.TextField(
-        null=True,
-        blank=True,
-    )
-
-    other_comments = models.TextField(
-        null=True,
-        blank=True,
-    )
-
-    customer = models.ForeignKey(
-        AppCustomerUser,
-        on_delete=models.CASCADE,
-    )
-
-    before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
-    after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
-
-    date = models.DateTimeField(auto_now_add=True,)
-{% endcomment %}

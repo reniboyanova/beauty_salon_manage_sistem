@@ -7,11 +7,11 @@
                     {% for field in form %}
                         <div>
                             {% if field.label %}
-                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ field.label }}:</div>
+                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ field.label }}</div>
                             {% endif %}
                             <div id="fieldsStyle">{{ field }}</div>
                         {% if field.errors %}
-                             <div class="alert alert-danger d-flex align-items-center justify-content-center h-100" role="alert" style="padding: 0;">{{ field.errors }}</div>
+                             <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;">{{ field.errors }}</div>
                         {% endif %}
                         </div>
                     {% endfor %}

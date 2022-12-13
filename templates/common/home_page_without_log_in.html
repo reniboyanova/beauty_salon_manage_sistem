@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" class="login_page">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>BeautyMSystem</title>
@@ -18,55 +18,61 @@
             crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body class="login_page">
 <div id="box">
-
-    <!-- Navigation Bar -->
     <header>
         {% include 'common/nav_bar.html' %}
     </header>
-<main>
-        <div class="container">
-            <div class="centered">Need innovations in your BEAUTY business?</div>
-       <button><a href="{% url 'info page'%}"
-               class="btn btn-outline-dark" role="button">GET STARTED</a></button>
-        </div>
-</main>
 </div>
-</body>
-    <div class="footer-style">
-{#        <footer  style="background-color:  rgb(63, 44, 92)">#}
-{#        <footer  style="background-color:  black">#}
-        <footer  style="background-color:  rgb(145, 169, 72)">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-                <!-- Section: Social media -->
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a href="https://blog.getbootstrap.com/"><i class="bi-facebook"
-                                                                style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
-                    <!-- Instagram -->
-                    <a href="https://blog.getbootstrap.com/"><i class="bi-instagram"
-                                                                style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
-                    <!-- Linkedin -->
-                    <a href="https://blog.getbootstrap.com/"><i class="bi-linkedin"
-                                                                style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
-                    <!-- Github -->
-                    <a href="https://blog.getbootstrap.com/"><i class="bi-github"
-                                                                style="font-size: 2rem; color: whitesmoke;"></i></a>
-
-                </section>
-                <div class="text-center p-3"  style="background-color: rgb(145, 169, 72)">
-                    © 2022 BEAUTY SALON MANAGEMENT SYSTEM:
-                    <a class="text-white" href="#">www.beautyms.com</a>
-                </div>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-
-            <!-- Copyright -->
-        </footer>
+<main>
+    <div class="col-md-6 p-lg-6 mx-auto my-5 text-center">
+        <p class="centered text-capitalize text-center about-banner" style="margin-bottom: 20px;">Need innovations in your BEAUTY business?</p>
+        <a href="{% url 'info page' %}" class="btn btn-dark text-uppercase" style=" position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);">Learn more</a>
     </div>
+    {#        <div class="container">#}
+    {#            <div class="centered">Need innovations in your BEAUTY business?</div>#}
+    {#       <a href="{% url 'info page'%}"#}
+    {#               class="btn btn-outline-dark" role="button">GET STARTED</a>#}
+    {#        </div>#}
+</main>
+</body>
+<div class="footer-style">
+    <footer style="background-color:  rgb(145, 169, 72)">
+{#    <footer style="background-color:  rgb(131,105,178)">#}
+        {#        <footer  style="background-color:  black">#}
+        {#        <footer  style="background-color:  rgb(145, 169, 72)">#}
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a href="https://blog.getbootstrap.com/"><i class="bi-facebook"
+                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                <!-- Instagram -->
+                <a href="https://blog.getbootstrap.com/"><i class="bi-instagram"
+                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                <!-- Linkedin -->
+                <a href="https://blog.getbootstrap.com/"><i class="bi-linkedin"
+                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                <!-- Github -->
+                <a href="https://blog.getbootstrap.com/"><i class="bi-github"
+                                                            style="font-size: 2rem; color: whitesmoke;"></i></a>
+
+            </section>
+            <div class="text-center p-3" style="background-color:rgb(145, 169, 72)">
+                © 2022 BEAUTY SALON MANAGEMENT SYSTEM:
+                <a class="text-white" href="#">www.beautyms.com</a>
+            </div>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+
+        <!-- Copyright -->
+    </footer>
+</div>
 </html>

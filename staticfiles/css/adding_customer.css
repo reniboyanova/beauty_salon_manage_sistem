@@ -19,7 +19,7 @@ select {
     margin: auto
 }
 
-input[type=text], input[type=password], input[type=number], input[type=url], input[type=date], select{
+input[type=text], input[type=password], input[type=number], input[type=url], input[type=date] {
     width: 100%;
     height: 2.1em;
     margin-bottom: 8px;
@@ -27,7 +27,20 @@ input[type=text], input[type=password], input[type=number], input[type=url], inp
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+
 }
+
+select {
+    font-size: 1rem;
+    padding: 0 2%;
+    margin-top: 1%;
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 input[type=textarea] {
     width: 100%;
@@ -37,8 +50,6 @@ input[type=textarea] {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-input
 
 
 #addingCustomer {

@@ -1,11 +1,11 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if current_customers_has_procedures %}
-         <div class="container">
+         <div class="container"  style=" margin-left: 20px;">
             <div class="row">
         {% for procedure in current_customers_has_procedures %}
             <div class="col-sm-3 mb-4">
-            <div class="card" style="width: 18rem; margin-left: 20px;">
+            <div class="card" style="width: 18rem;">
   <img class="card-img-top" style="height: 380px;" src="{{ procedure.after_image.url }}" alt="After image">
   <div class="card-body">
     <h5 class="card-title">After image of last procedure: </h5>
@@ -18,23 +18,24 @@
     <li class="list-group-item">Number of customer's procedures are: {{ current_customers_has_procedures.count }}!</li>
   </ul>
   <div class="card-body">
-    <a class="btn btn-info btn-sm" href="{% url 'full information for procedure' pk=procedure.pk %}" id="buttonSmallAdd">Full information</a>
+    <a class="btn btn-dark btn-sm" href="{% url 'full information for procedure' pk=procedure.pk %}" >Full information</a>
   </div>
 </div>
-{#            <div id="labelIdforPlainText">Main type of procedure is: {{ procedure.main_type_of_procedure }}</div>#}
-{#                    <div id="labelIdforPlainText">Before image / After image:</div>#}
-{#                        <div >#}
-{#                             <img class="image-of-customers" src="{{ procedure.before_image.url }}" alt="Lights">#}
-{#                            <img class="image-of-customers" src="{{ procedure.after_image.url }}" alt="Lights">#}
-{#                        </div>#}
             </div>
         {% endfor %}
             </div>
          </div>
     {% else %}
-        <div id="labelIdforPlainText">No procedures!</div>
+        <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No procedures!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add procedure?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'add procedure to customer' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
-    <div id="labelIdforPlainText">Number of customer's procedures are: {{ current_customers_has_procedures.count }}!
-    </div>
-    {% include 'common/pagination.html' %}
 {% endblock %}

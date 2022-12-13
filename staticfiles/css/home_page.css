@@ -11,7 +11,7 @@ nav.navbar {
     background-size: cover;
 }
 
-html.login_page {
+body.login_page {
     background-image: url('/static/images/girls.jpg');
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -20,7 +20,6 @@ html.login_page {
 
 
 footer {
-    /*background-image: url('/static/images/background-black-colors-952670.jpg');*/
     color: #ffffff;
     width: 100%;
     left: 0;
@@ -59,22 +58,6 @@ textarea {
     text-decoration: underline deeppink;
 }
 
-.container button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    color: darkturquoise;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    background: none;
-}
-
 .container button:active {
     background-color: white;
     color: black;
@@ -91,10 +74,4 @@ textarea {
     transform: translate(-50%, -50%);
     font-size: 34px;
     font-weight: bold;
-}
-
-h3.centered-info-page {
-    color: white;
-    text-align: center;
-    margin: 0;
 }

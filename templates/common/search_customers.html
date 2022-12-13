@@ -1,5 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
+    {% if searched_customers %}
         <li class="text-margin-left">
         <ul class="list-group" style="margin-bottom: 20px;">
     {% for customer in searched_customers %}
@@ -7,4 +8,16 @@
             info</a></li>
     {% endfor %}
         </ul>
+    {% else %}
+                <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <p style="text-align: center; color: white;">Customer with this name is not found! Can see all of your customers in section 'My customers' in your 'Profile'!</p>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'my profile details' pk=user.pk %}" type="submit" class="btn btn-dark">My profile details</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

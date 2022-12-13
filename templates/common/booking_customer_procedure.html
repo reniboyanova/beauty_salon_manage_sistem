@@ -1,11 +1,9 @@
 {% extends 'common/index_page.html' %}
-{% load custom_filters %}
 {% block content %}
-{% if user|has_group:"Managers" %}
- <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+<div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
                 <div class="login-register-box">
-                    <form method="post" action="{% url 'add product' %}">
+                    <form method="post" action="{% url 'booking customer procedure' %}">
                          {% for field in form %}
                     <div>
                         {% if field.label %}
@@ -17,7 +15,7 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-                <div><input name="next" type="hidden" value="{% url 'add product' %}"></div>
+{#                <div><input name="next" type="hidden" value="{% url '' %}"></div>#}
                 <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Add</button></div>
                 {% csrf_token %}
                         {% csrf_token %}
@@ -25,6 +23,10 @@
                 </div>
             </div>
         </div>
-
-    {% endif %}
+    <div class="alert alert-light" role="alert" style="margin-left: 180px; margin-right: 180px; margin-top: 20px; padding: 3px;">
+    <i class="bi bi-info-circle-fill"></i> The information in this section can be EDIT only from admin site.
+        You can DELETE booked procedures from 'Booked procedures' section, when they finished.
+        You can ADD booking-procedure to your clients.
+        BMSystem inform: If you DELETE your customer, all the booked-procedures information of her/him will delete too!
+</div>
 {% endblock %}

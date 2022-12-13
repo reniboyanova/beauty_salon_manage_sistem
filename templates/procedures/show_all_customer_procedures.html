@@ -1,6 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
-{% if customer_procedures %}
+{% if page_obj %}
     <div class="container" style="margin-left: 20px;">
             <div class="row">
         {% for procedure in page_obj %}
@@ -24,7 +24,17 @@
             </div>
          </div>
     {% else %}
-        <h2 id="labelIdforPlainText" style="margin-left: 20px;">No procedures!</h2>
+          <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No procedures!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add procedure?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'add procedure to customer' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 <div style="margin-left: 20px;" >{% include 'common/pagination.html' %}</div>
 {% endblock %}

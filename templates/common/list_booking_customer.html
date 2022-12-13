@@ -1,0 +1,47 @@
+{% extends 'common/index_page.html' %}
+{% load custom_filters %}
+{% block content %}
+    {% if user|has_group:"Staff Group" %}
+    {% if my_booking_procedure %}
+        <li class="text-margin-left">
+        <ul class="list-group" style="margin-bottom: 20px;">
+    {% for booking in my_booking_procedure %}
+
+        <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{ booking.select_date }}; <i class="bi bi-clock"></i> {{ booking.select_time }}h.; <i class="bi bi-person-circle"></i> {{ booking.customer.get_full_name }}; <i class="bi bi-telephone-fill"></i> {{ booking.customer.phone_number }}<input name="next" type="hidden" value="{% url 'index page with profile' %}"> <a href="{% url 'delete booking hour' pk=booking.pk%}" ><i class="bi bi-trash-fill"></i></a> </li>
+    {% endfor %}
+
+         {# Pagination #}
+        {% include 'common/pagination.html' %}
+        {# End Pagination #}
+    {% else %}
+    <h2 style="margin-left: 20px;color: white">You don't have any booked procedures!</h2>
+        </ul>
+    {% endif %}
+    {% endif %}
+    {% if user|has_group:"Managers" %}
+            {% if page_obj %}
+        <li class="text-margin-left">
+        <ul class="list-group " style="margin-bottom: 20px;">
+    {% for booking in page_obj %}
+        <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{ booking.select_date }}; <i class="bi bi-clock"></i> {{ booking.select_time }}h.; <i class="bi bi-person-circle"></i> {{ booking.customer.get_full_name }}; <i class="bi bi-telephone-fill"></i> {{ booking.customer.phone_number }}; Hair stylist: {{ booking.hair_stylist }}; <a href="{% url 'delete booking hour' pk=booking.pk%}" ><i class="bi bi-trash3-fill"></i></a>
+       </li>
+    {% endfor %}
+
+         {# Pagination #}
+        {% include 'common/pagination.html' %}
+        {# End Pagination #}
+    {% else %}
+  <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No booked procedures, yet!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'booking customer procedure' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>        </ul>
+    {% endif %}
+    {% endif %}
+{% endblock %}

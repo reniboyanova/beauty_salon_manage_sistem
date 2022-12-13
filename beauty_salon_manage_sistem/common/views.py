@@ -1,14 +1,13 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.views.decorators.cache import cache_page
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView, ListView, DeleteView
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
-
-
-# class IndexPageView(TemplateView):
-#     template_name = 'common/index_page.html'
+from beauty_salon_manage_sistem.common.forms import BookingForm, BookingFormDeleteForm
+from beauty_salon_manage_sistem.common.models import BookingCustomerProcedure
 
 
 class IndexPageWithProfile(LoginRequiredMixin, TemplateView):
@@ -39,3 +38,30 @@ def search_customers(request):
 
 def handle_not_found(request, exception):
     return render(request, '404.html')
+
+
+class BookingCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'common/booking_customer_procedure.html'
+    form_class = BookingForm
+    success_url = reverse_lazy('index page with profile')
+
+
+class BookingListView(LoginRequiredMixin, ListView):
+    template_name = 'common/list_booking_customer.html'
+    queryset = BookingCustomerProcedure.objects.all()
+    success_url = reverse_lazy('index page with profile')
+    paginate_by = 4
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        my_booking_procedure = self.queryset.filter(hair_stylist=self.request.user)
+        context['my_booking_procedure'] = my_booking_procedure
+        return context
+
+class BookingDeleteView(LoginRequiredMixin, DeleteView):
+    model = BookingCustomerProcedure
+    success_url = reverse_lazy('my booking hours')
+    form_class = BookingFormDeleteForm
+    template_name = 'common/delete_booking_procedure.html'
+
+

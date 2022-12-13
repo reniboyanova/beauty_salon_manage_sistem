@@ -3,11 +3,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
-from django.views.generic.list import MultipleObjectMixin
 
 from beauty_salon_manage_sistem.accounts.forms import RegistrationAppUserForm, AddingCustomerForm, AppProfileDeleteForm
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
-from beauty_salon_manage_sistem.procedures.models import Procedure
 
 UserModel = get_user_model()
 
@@ -22,6 +20,7 @@ class ShowAppCustomers(LoginRequiredMixin, ListView):
         context['staffs'] = UserModel.objects.all()
         context['customers'] = AppCustomerUser.objects.all()
         context['my_customers'] = AppCustomerUser.objects.filter(hair_stylist__user=self.request.user)
+        context['my_booking_hours'] = UserModel.objects.filter()
 
         return context
 
@@ -37,6 +36,12 @@ class CreateAppStaffUser(CreateView):
         # request => self.request
         login(self.request, self.object)
         return result
+
+
+class CreateAppStaffUserFromManager(CreateView):
+    template_name = 'accounts/staff_creation_from_manager.html'
+    form_class = RegistrationAppUserForm
+    success_url = reverse_lazy('add staff')
 
 
 class CreateCustomer(LoginRequiredMixin, CreateView):

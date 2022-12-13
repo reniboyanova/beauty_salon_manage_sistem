@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center justify-content-center h-100">
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px;">
             <div class="login-register-box">
-                <form method="post" action="{% url 'register user' %}">
+                <form method="post" action="{% url 'add staff' %}">
                     {% for field in form %}
                     <div>
                         {% if field.label %}
@@ -15,8 +15,7 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-                <div><input name="next" type="hidden" value="{% url 'register user' %}"></div>
-                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Register</button></div>
+                <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Register staff</button></div>
                 {% csrf_token %}
                 </form>
             </div>

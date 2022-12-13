@@ -2,30 +2,40 @@
 {% block content %}
     {% if customers %}
             <li class="text-margin-left">
-        <ul class="list-group" style="margin-bottom: 20px;">
         {% for customer in customers %}
+        <ul class="list-group" style="margin-bottom: 20px;">
 
             <li class="list-group-item">
-            <i class="bi bi-person-circle"></i>{{ customer.full_name_and_phone_number }}
+            <i class="bi bi-person-circle"></i> {{ customer.full_name_and_phone_number }}
             <div >Customer's procedures <a
                     href="{% url 'procedures of customer' pk=customer.pk %}"
-                    class="btn btn-outline-info btn-sm" role="button">Show
+                    class="btn btn-dark btn-sm" role="button" id="buttonSmallAdd">Show
                 info</a>
-                <a href="{% url 'delete customer profile' pk=customer.pk %}"
-                   class="btn btn-outline-info btn-sm" role="button">Delete
-                    user</a>
                 <a href="{% url 'edit customer profile' pk=customer.pk %}"
-                   class="btn btn-outline-info btn-sm" role="button">Edit
+                   class="btn btn-outline-dark btn-sm" role="button">Edit
+                    user</a>
+                <a href="{% url 'delete customer profile' pk=customer.pk %}"
+                   class="btn btn-outline-dark btn-sm" role="button">Delete
                     user</a>
             </div>
             </li>
 
         {% endfor %}
+        </ul>
            <ul class="list-group">
     <li class="list-group-item" style="background-color: grey; color: white">Number of my customers are: {{ customers.count }}!</li>
 </ul>
-        {% include 'common/pagination.html' %}
     {% else %}
-        <h3 id="labelIdforPlainText">No customers yet!</h3>
+        <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No customers yet!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add customer?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'add customer' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 {% endblock %}

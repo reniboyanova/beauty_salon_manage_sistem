@@ -10,17 +10,10 @@
 
 .text-margin-left {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 20px;
 }
-
-/*#buttonSmallAdd {*/
-/*    background-color: deeppink;*/
-/*    color: white;*/
-
-
-/*}*/
 
 #buttonSmallAdd:hover {
     background-color: white;
-    color: darkturquoise;
+    color: black;
 }

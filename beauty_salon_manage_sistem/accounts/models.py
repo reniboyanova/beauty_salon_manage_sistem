@@ -3,6 +3,7 @@ from django.contrib.auth.models import PermissionsMixin
 from django.core import validators
 from django.db import models
 from django.db.models import CASCADE, PROTECT
+from django.utils.text import slugify
 
 from beauty_salon_manage_sistem.accounts.managers import AppBaseUserManager
 from beauty_salon_manage_sistem.core.validators import validate_only_letters
@@ -31,7 +32,7 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
         return f'{self.appstaffprofile.get_full_name}'
 
     def __str__(self):
-        return f'{self.get_full_name_with_profile} - - {self.appstaffprofile.position}'
+        return f'{self.get_full_name_with_profile} - {self.appstaffprofile.position}'
 
     class Meta:
         verbose_name = 'Staff User'
@@ -101,7 +102,7 @@ class AppCustomerUser(models.Model):
     MAX_LEN_PHONE_NUMBER = len('+359888888888')
     MIN_LEN_PHONE_NUMBER = len('+359888888888')
     #
-    # TODO Make it with enumerate!
+
     GENDER_CHOICES = [('Male', 'Male'), ('Female', 'Female'), ('Do not show', 'Do not show'), ]
     MAX_LEN_GENDER = len('Do not show')
     #

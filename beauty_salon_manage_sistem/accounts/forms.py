@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.core import validators
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser, AppStaffProfile
+from beauty_salon_manage_sistem.common.models import BookingCustomerProcedure
 from beauty_salon_manage_sistem.core.validators import validate_only_letters
 from beauty_salon_manage_sistem.procedures.models import Procedure
 
@@ -106,11 +107,6 @@ class AddingCustomerForm(forms.ModelForm):
 
         }
 
-        error_messages = {
-            'phone_number': {'required': 'Add a phone number!'},
-            'hair_stylist': {'required': 'This is required!'}
-        }
-
 
 class AppProfileEditForm(RegistrationAppUserForm):
     class Meta:
@@ -123,6 +119,7 @@ class AppUserEditForm(UserChangeForm):
         model = UserModel
         fields = ('email',)
 
+
 class AppProfileDeleteForm(AddingCustomerForm):
     class Meta:
         model = AppCustomerUser
@@ -133,6 +130,7 @@ class AppProfileDeleteForm(AddingCustomerForm):
             Procedure.objects \
                 .all() \
                 .delete()
+            BookingCustomerProcedure.objects.all().delete()
             self.instance.delete()
 
         return self.instance
@@ -140,4 +138,3 @@ class AppProfileDeleteForm(AddingCustomerForm):
 
 class AppCustomerEditForm(AddingCustomerForm):
     pass
-

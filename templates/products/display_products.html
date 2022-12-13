@@ -1,13 +1,13 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
     {% if user.is_authenticated and page_obj %}
-        <div class="text-margin-left" id="labelIdforPlainText">List of our products:</div>
-        <div class="container">
+{#        <div class="text-margin-left" id="labelIdforPlainText">List of our products:</div>#}
+        <div class="container" style="margin-left: 20px;">
             <div class="row">
                 {% for product in addproducts_list %}
                     <div class="col-sm-3 mb-4">
-                        <div class="card" style="width: 18rem; margin-left: 20px;">
-                            <img class="card-img-top" src="{{ product.image_of_product }}" alt="After image">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{{ product.image_of_product }}" alt="{{ product.type_of_product }}" style="height: 290px;">
                             <div class="card-body">
                                 <h5 class="card-title">Product brand: </h5>
                                 <p class="card-text"><i class="bi bi-tag"></i> {{ product.brand }}</p>
@@ -22,7 +22,7 @@
                                        href="{% url 'edit product' pk=product.pk %}">Edit</a>
                                     <a class="btn btn-outline-dark btn-sm"
                                        href="{% url 'delete product' pk=product.pk %}">Delete</a>
-                                    <a class="btn btn-info btn-sm" href="{% url 'add product' %}" id="buttonSmallAdd">Add
+                                    <a class="btn btn-dark btn-sm" href="{% url 'add product' %}" id="buttonSmallAdd">Add
                                         product</a>
                                 </div>
                             </ul>
@@ -32,7 +32,17 @@
             {% include 'common/pagination.html' %}
                 {% else %}
                 <div>
-                    <h3 style="text-align: center; color: white;">Does not have any products yet!</h3>
+                      <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No products!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add product?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'add product' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>
                 </div>
             </div>
         </div>

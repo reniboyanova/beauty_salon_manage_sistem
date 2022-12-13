@@ -55,9 +55,9 @@ input:focus {
     border-color: black;
 }
 
-#buttonSubmision:active {
-    background-color: darkturquoise;
-}
+/*#buttonSubmision:active {*/
+/*    background-color: darkturquoise;*/
+/*}*/
 
 div.login-register-div {
     margin-left: auto;
@@ -134,9 +134,9 @@ div.login-register-box {
     margin: auto
 }
 
-#linkText:active {
-    background-color: darkturquoise;
-}
+/*#linkText:active {*/
+/*    background-color: darkturquoise;*/
+/*}*/
 
 
 
