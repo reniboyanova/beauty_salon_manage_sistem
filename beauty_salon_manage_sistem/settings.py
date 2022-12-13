@@ -5,18 +5,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(os.environ.get('DEBUG'))
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    'localhost',
 ]
 
 AUTH_USER_MODEL = 'accounts.AppBaseUser'
@@ -36,6 +33,7 @@ INSTALLED_APPS = [
     'beauty_salon_manage_sistem.common',
     'beauty_salon_manage_sistem.products',
     'beauty_salon_manage_sistem.procedures',
+    'beauty_salon_manage_sistem.certificates',
 
     # third-party-apps:
     'multiselectfield',
@@ -74,9 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -85,13 +80,6 @@ DATABASES = {
         'PASSWORD': 'rebo123',
         'HOST': '127.0.0.1',
         'PORT': '5432',
-    }
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379',
     }
 }
 
@@ -130,10 +118,11 @@ LOGIN_REDIRECT_URL = 'common/home_page_with_profile.html'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    BASE_DIR / 'staticfiles',
+    BASE_DIR / 'static',
 )
 
 MEDIA_URL = '/media/'

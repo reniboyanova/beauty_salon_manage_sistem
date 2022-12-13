@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from beauty_salon_manage_sistem.accounts.forms import AppUserEditForm, AppProfileEditForm, RegistrationAppUserForm
-from beauty_salon_manage_sistem.accounts.models import AppStaffProfile, AppBaseUser
+from beauty_salon_manage_sistem.accounts.models import AppStaffProfile, AppBaseUser, AppCustomerUser
 
 
 # Now register the new UserAdmin.
@@ -14,3 +14,9 @@ class AppBaseUserAdmin(admin.ModelAdmin):
 class AppStaffProfileAdmin(admin.ModelAdmin):
     form = AppProfileEditForm
     fields = ('first_name', 'last_name', 'position',)
+
+
+@admin.register(AppCustomerUser)
+class AppCustomerUserAdmin(admin.ModelAdmin):
+    list_display = ['first_name','last_name', 'phone_number', 'date_of_join',]
+    ordering = ['first_name', '-date_of_join',]
