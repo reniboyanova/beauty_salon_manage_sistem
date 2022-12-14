@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'beauty_system_db',
-        'USER': 'postgres',
-        'PASSWORD': 'rebo123',
-        'HOST': '127.0.0.1',
+        'NAME': 'ddivgg8jerkluf',
+        'USER': 'noxgqswjpzqaer',
+        'PASSWORD': '3386084764573f2e774102c6c2ef6ebb44a3ccaf18193ce13d43fc0a9e5800e5',
+        'HOST': 'ec2-34-246-227-219.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
