@@ -12,7 +12,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'beauty-manage-system.herokuapp.com ',
+    'beauty-manage-s.herokuapp.com/'
+
 ]
 
 AUTH_USER_MODEL = 'accounts.AppBaseUser'
@@ -76,9 +77,9 @@ WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ddivgg8jerkluf',
-        'USER': 'noxgqswjpzqaer',
-        'PASSWORD': '3386084764573f2e774102c6c2ef6ebb44a3ccaf18193ce13d43fc0a9e5800e5',
+        'NAME': 'df2hbtqgrn7hlv',
+        'USER': 'lnptjrvspfixfv',
+        'PASSWORD': '5249b11173509a3368028eb62b35b803c34832891e22bd94638eef8b328b94c6',
         'HOST': 'ec2-34-246-227-219.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
