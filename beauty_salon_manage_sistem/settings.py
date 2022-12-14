@@ -11,11 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k++)79!c93%(o9*)w!urmlpsx&krgs+54xv$jr+gyc@#b8w6rc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'https://beauty-m-s.herokuapp.com/',
+    'https://beauty-manage-system.herokuapp.com/',
 ]
 
 AUTH_USER_MODEL = 'accounts.AppBaseUser'
