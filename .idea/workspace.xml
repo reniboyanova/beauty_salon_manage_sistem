@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="Fix the admin site and make some changes on static files" />
+    <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="Fix the admin site and make some changes on static files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +108,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="true" />
+        <option name="IS_ENABLED" value="false" />
         <option name="IS_SUBST" value="false" />
         <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
         <option name="IS_IGNORE_MISSING_FILES" value="false" />
@@ -190,7 +193,7 @@
       <workItem from="1670953507953" duration="7381000" />
       <workItem from="1671005576820" duration="1337000" />
       <workItem from="1671007141993" duration="12175000" />
-      <workItem from="1671025831554" duration="5836000" />
+      <workItem from="1671025831554" duration="6451000" />
     </task>
     <task id="LOCAL-00001" summary="first sceleton">
       <created>1668586863314</created>
