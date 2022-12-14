@@ -4,7 +4,6 @@
     <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="Fix the admin site and make some changes on static files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +191,8 @@
       <workItem from="1670907814310" duration="16211000" />
       <workItem from="1670930502559" duration="8713000" />
       <workItem from="1670953507953" duration="7381000" />
-      <workItem from="1671005576820" duration="832000" />
+      <workItem from="1671005576820" duration="1337000" />
+      <workItem from="1671007141993" duration="5570000" />
     </task>
     <task id="LOCAL-00001" summary="first sceleton">
       <created>1668586863314</created>
