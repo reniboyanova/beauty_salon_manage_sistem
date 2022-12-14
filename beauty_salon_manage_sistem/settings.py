@@ -12,6 +12,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
+    'https://b-m-system.herokuapp.com/ ',
 
 ]
 
@@ -70,7 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
-
 
 
 DATABASES = {
