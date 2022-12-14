@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k++)79!c93%(o9*)w!urmlpsx&krgs+54xv$jr+gyc@#b8w6rc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -75,13 +75,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9hetsujpcqn8a',
-        'USER': 'ynikgjuounkdll',
-        'PASSWORD': '1c4cd3e39bce8baa63a283bd86c557aed2014ed747ecda412dfa9398f55177eb',
-        'HOST': 'ec2-63-35-156-160.eu-west-1.compute.amazonaws.com',
+        'NAME': 'beauty_system_db',
+        'USER': 'postgres',
+        'PASSWORD': 'rebo123',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -120,11 +121,11 @@ LOGIN_REDIRECT_URL = 'common/home_page_with_profile.html'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR / 'static'),
+    BASE_DIR / 'static',
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
