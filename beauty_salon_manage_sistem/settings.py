@@ -15,7 +15,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'https://beauty-manage-system.herokuapp.com/',
+    'beauty-manage-system.herokuapp.com ',
 ]
 
 AUTH_USER_MODEL = 'accounts.AppBaseUser'
