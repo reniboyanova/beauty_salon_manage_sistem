@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView, CreateView, ListView, DeleteView
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
@@ -20,7 +19,9 @@ class InfoPage(TemplateView):
 
 def index_function_view(request):
     if request.user.is_authenticated:
-        return redirect('index page with profile')
+        if request.user.has_perm:
+            return redirect('index page with profile')
+        return redirect('index page')
 
     return render(request, 'common/home_page_without_log_in.html')
 
@@ -44,6 +45,11 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
     template_name = 'common/booking_procedure/booking_customer_procedure.html'
     form_class = BookingForm
     success_url = reverse_lazy('index page with profile')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['customers'] = AppCustomerUser.objects.all()
+        return context
 
 
 class BookingListView(LoginRequiredMixin, ListView):

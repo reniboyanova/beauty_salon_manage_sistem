@@ -65,7 +65,7 @@
                             <li><a class="dropdown-item" href="{% url 'add customer' %}">Add new customer</a></li>
                         </ul>
                     </li>
-                    {% if user|has_group:"Managers" %}
+                    {% if user|has_group:"Managers" or user|has_group:"Owner" %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">

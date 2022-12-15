@@ -1,5 +1,6 @@
 {% extends 'common/index_page.html' %}
 {% block content %}
+    {% if customers %}
 <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
                 <div class="login-register-box">
@@ -29,4 +30,17 @@
         You can ADD booking-procedure to your clients.
         BMSystem inform: If you DELETE your customer, all the booked-procedures information of her/him will delete too!
 </div>
+    {% else %}
+         <div class="d-flex align-items-center justify-content-center h-100" style="color: white;">
+        <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
+                <div class="login-register-box">
+                    <h4 style="text-align: center; color: white;">No customers yet!</h4>
+                    <h4 style="text-align: center; color: white;">Do you want to add customer?</h4>
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <a href="{% url 'add customer' %}" type="submit" class="btn btn-dark">Yes</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

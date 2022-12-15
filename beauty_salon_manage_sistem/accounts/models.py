@@ -41,7 +41,6 @@ class AppBaseUser(AbstractBaseUser, PermissionsMixin):
 
 # UserProfile - Staff
 class AppStaffProfile(models.Model):
-    user = models.OneToOneField(AppBaseUser, primary_key=True, on_delete=CASCADE, )
     USERNAME_FIELD = 'email'
 
     MIN_LEN_FIRST_NAME = 2
@@ -51,6 +50,7 @@ class AppStaffProfile(models.Model):
     MAX_LEN_LAST_NAME = 40
 
     MAX_LEN_POSITION = 100
+    user = models.OneToOneField(AppBaseUser, primary_key=True, on_delete=CASCADE, )
 
     first_name = models.CharField(
         max_length=MAX_LEN_FIRST_NAME,

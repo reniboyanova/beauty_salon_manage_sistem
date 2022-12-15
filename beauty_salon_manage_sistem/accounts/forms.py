@@ -111,13 +111,13 @@ class AddingCustomerForm(forms.ModelForm):
 class AppProfileEditForm(RegistrationAppUserForm):
     class Meta:
         model = AppStaffProfile
-        exclude = ('email', 'password1', 'password2')
+        exclude = ('email', 'password1', 'password2',)
 
 
 class AppUserEditForm(UserChangeForm):
     class Meta:
         model = UserModel
-        fields = ('email',)
+        fields = ('email', )
 
 
 class AppProfileDeleteForm(AddingCustomerForm):
