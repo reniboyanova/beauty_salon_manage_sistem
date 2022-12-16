@@ -26,6 +26,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout user' %}">Log out</a>
                     </li>
+                    {% if user|has_group:"Managers" or user|has_group:"Owner" or user|has_group:"Staff Group"%}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,7 +86,15 @@
                      <li class="nav-item">
                             <a class="nav-link active" href="{% url 'booking customer procedure' %}">Book procedure</a>
                         </li>
-                {% else %}
+{#                {% else %}#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link active" href="{% url 'login user' %}">Log in</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link active" aria-current="page" href="{% url 'register user' %}">Register</a>#}
+{#                    </li>#}
+                        {% endif %}
+                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'login user' %}">Log in</a>
                     </li>
@@ -97,6 +106,7 @@
 
             </ul>
             {% if user.is_authenticated %}
+                {% if user|has_group:"Managers" or user|has_group:"Owner" or user|has_group:"Staff Group" %}
                 <li class="d-flex">
                     <a class="nav-link disabled" href="#" tabindex="-1"
                        aria-disabled="true"
@@ -105,16 +115,29 @@
                             class="badge badge-pill badge-info"
                             style="background-color: grey; color: white; text-align: center; margin-left: 5px; margin-right: 5px;">{{ user.appstaffprofile.position }}</span>
                 </li>
-            {% endif %}
-            {% if user.is_authenticated %}
-                <form class="d-flex" action="{% url 'search customers' %}" method="post">
+                     <form class="d-flex" action="{% url 'search customers' %}" method="post">
                     {% csrf_token %}
                     <input class="form-control me-2" type="search" placeholder="Search in customers"
                            aria-label="Search"
                            name="search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
+                    {% else %}
+                     <li class="d-flex">
+                    <a class="nav-link disabled" href="#" tabindex="-1"
+                       aria-disabled="true"
+                       style="color: white; margin-right: 2px;">Welcome, {{ user.get_full_name_with_profile }}! You need to have permission to use this app!</a>
             {% endif %}
+        {% endif %}
+{#            {% if user.is_authenticated %}#}
+{#                <form class="d-flex" action="{% url 'search customers' %}" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <input class="form-control me-2" type="search" placeholder="Search in customers"#}
+{#                           aria-label="Search"#}
+{#                           name="search">#}
+{#                    <button class="btn btn-outline-light" type="submit">Search</button>#}
+{#                </form>#}
+{#            {% endif %}#}
         </div>
     </div>
 </nav>
