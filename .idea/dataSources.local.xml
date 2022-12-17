@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="PY-222.4167.33">
-    <data-source name="postgres@localhost" uuid="f0992256-354f-41db-b2ad-1309204b3a92">
-      <database-info product="PostgreSQL" version="14.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.5.0" dbms="POSTGRES" exact-version="14.5" exact-driver-version="42.5">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+    <data-source name="PostgreSQL_B_M_SYSTEM" uuid="f80c4ca2-c376-4b30-8650-a946aab1f65e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
       <secret-storage>master_key</secret-storage>
-      <user-name>postgres</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node negative="1">
-            <node kind="database" qname="@">
-              <node kind="schema" qname="@" />
-            </node>
-            <node kind="database">
-              <name qname="beauty_system_db" />
-              <name qname="bsms_db" />
-              <node kind="schema" qname="public" />
-            </node>
-          </node>
-        </introspection-scope>
-      </schema-mapping>
+      <user-name>xzlnhvalvujrkn</user-name>
+      <schema-mapping />
     </data-source>
   </component>
 </project>

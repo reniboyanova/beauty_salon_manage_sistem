@@ -26,7 +26,6 @@ class ShowAppCustomers(LoginRequiredMixin, ListView):
         return context
 
 
-
 class CreateAppStaffUser(CreateView):
     template_name = 'accounts/users_accounts/staff_creation_form.html'
     form_class = RegistrationAppUserForm
