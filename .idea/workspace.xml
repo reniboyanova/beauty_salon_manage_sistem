@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13fc0a30-8bfa-4a00-ae47-ea9d8d7d082d" name="Changes" comment="Changing in accounts/admin.py">
-      <change afterPath="$PROJECT_DIR$/staticfiles/.ditignor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/beauty_salon_manage_sistem/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +199,7 @@
       <workItem from="1671173878825" duration="8753000" />
       <workItem from="1671221542507" duration="524000" />
       <workItem from="1671269153174" duration="953000" />
-      <workItem from="1671270208593" duration="598000" />
+      <workItem from="1671270208593" duration="1672000" />
     </task>
     <task id="LOCAL-00001" summary="first sceleton">
       <created>1668586863314</created>
