@@ -3,6 +3,16 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
+import cloudinary
+
+cloudinary.config(
+  cloud_name = "dqsiuuh1x",
+  api_key = "737127952638384",
+  api_secret = "4LLQQXrNy_VJYWZPhQvBWM_KWQg"
+)
+
+import cloudinary.uploader
+import cloudinary.api
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
