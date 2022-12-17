@@ -9,3 +9,4 @@ class ProfessionalCertificateAdmin(admin.ModelAdmin):
     add_form = CreateCertificateForm
     list_display = ['date_of_certificate', 'valid_until', 'certificate_owner', 'qualification']
     ordering = ['date_of_certificate', 'valid_until',]
+
