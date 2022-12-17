@@ -86,7 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
