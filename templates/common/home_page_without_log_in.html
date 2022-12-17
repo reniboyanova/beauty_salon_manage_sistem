@@ -20,11 +20,12 @@
 </head>
 <style>
     body {
-    background-image: url('{% static '/images/girls.jpg' %}');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 80% 20%;
-}
+        background-image: url('{% static '/images/girls.jpg' %}');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 80% 20%;
+        background-color: rgb(188, 171, 225);
+    }
 
 </style>
 <body class="login_page">
@@ -35,7 +36,8 @@
 </div>
 <main>
     <div class="col-md-6 p-lg-6 mx-auto my-5 text-center">
-        <p class="centered text-capitalize text-center about-banner" style="margin-bottom: 20px;">Need innovations in your BEAUTY business?</p>
+        <p class="centered text-capitalize text-center about-banner" style="margin-bottom: 20px;">Need innovations in
+            your BEAUTY business?</p>
         <a href="{% url 'info page' %}" class="btn btn-dark text-uppercase" style=" position: absolute;
     top: 50%;
     left: 50%;
@@ -44,23 +46,23 @@
 </main>
 </body>
 <div class="footer-style">
-{#    <footer style="background-color:  rgb(145, 169, 72)">#}
+    {#    <footer style="background-color:  rgb(145, 169, 72)">#}
     <footer style="background-color:  rgb(131,105,178)">
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
                 <a href="#"><i class="bi-facebook"
-                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                               style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
                 <!-- Instagram -->
                 <a href="#"><i class="bi-instagram"
-                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                               style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
                 <!-- Linkedin -->
                 <a href="#"><i class="bi-linkedin"
-                                                            style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
+                               style="font-size: 2rem; color: whitesmoke; margin-right: 0.3em;"></i></a>
                 <!-- Github -->
                 <a href="#"><i class="bi-github"
-                                                            style="font-size: 2rem; color: whitesmoke;"></i></a>
+                               style="font-size: 2rem; color: whitesmoke;"></i></a>
 
             </section>
             <div class="text-center p-3" style="background-color:rgb(131,105,178)">
