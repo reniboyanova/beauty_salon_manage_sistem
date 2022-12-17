@@ -5,7 +5,7 @@ from beauty_salon_manage_sistem.accounts.models import AppStaffProfile, AppBaseU
 
 @admin.register(AppBaseUser)
 class AppBaseUserAdmin(admin.ModelAdmin):
-    empty_value_display = '-empty-'
+    empty_value_display = '-Superuser-'
 
 
 # @admin.register(AppStaffProfile)
