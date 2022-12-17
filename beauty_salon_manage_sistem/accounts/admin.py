@@ -8,10 +8,10 @@ class AppBaseUserAdmin(admin.ModelAdmin):
     empty_value_display = '-empty-'
 
 
-@admin.register(AppStaffProfile)
-class AppStaffProfileAdmin(admin.ModelAdmin):
-    # form = AppProfileEditForm
-    fields = ('first_name', 'last_name', 'position', 'user')
+# @admin.register(AppStaffProfile)
+# class AppStaffProfileAdmin(admin.ModelAdmin):
+#     # form = AppProfileEditForm
+#     fields = ('first_name', 'last_name', 'position',)
 
 
 @admin.register(AppCustomerUser)
