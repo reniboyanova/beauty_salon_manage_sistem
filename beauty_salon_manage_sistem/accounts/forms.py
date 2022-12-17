@@ -138,3 +138,15 @@ class AppProfileDeleteForm(AddingCustomerForm):
 
 class AppCustomerEditForm(AddingCustomerForm):
     pass
+
+
+# class AppUserDeleteForm(RegistrationAppUserForm):
+#     class Meta:
+#         model = UserModel
+#
+#     def save(self, commit=True):
+#         if commit:
+#             AppStaffProfile.objects.filter(user=self.instance).delete()
+#             self.instance.delete()
+#
+#         return self.instance

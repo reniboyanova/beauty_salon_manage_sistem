@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'beauty_system_db',
-        'USER': 'postgres',
-        'PASSWORD': 'rebo123',
-        'HOST': '127.0.0.1',
+        'NAME': 'd8nubmafk0nbkj',
+        'USER': 'xzlnhvalvujrkn',
+        'PASSWORD': '509d081650a87f0083da210c41e340ae1f19a813c50e39f864f466fa89274761',
+        'HOST': 'ec2-34-242-84-130.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -122,11 +122,11 @@ LOGIN_REDIRECT_URL = 'common/home_page_with_profile.html'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles',
+    BASE_DIR / 'static',
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

@@ -10,6 +10,7 @@ class AppBaseUserAdmin(admin.ModelAdmin):
 
 @admin.register(AppStaffProfile)
 class AppStaffProfileAdmin(admin.ModelAdmin):
+    # form = AppProfileEditForm
     fields = ('first_name', 'last_name', 'position', 'user')
 
 
