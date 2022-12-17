@@ -3,17 +3,6 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
-import cloudinary
-
-cloudinary.config(
-  cloud_name = "dqsiuuh1x",
-  api_key = "737127952638384",
-  api_secret = "4LLQQXrNy_VJYWZPhQvBWM_KWQg"
-)
-
-import cloudinary.uploader
-import cloudinary.api
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,10 +78,10 @@ WSGI_APPLICATION = 'beauty_salon_manage_sistem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd8nubmafk0nbkj',
-        'USER': 'xzlnhvalvujrkn',
-        'PASSWORD': '509d081650a87f0083da210c41e340ae1f19a813c50e39f864f466fa89274761',
-        'HOST': 'ec2-34-242-84-130.eu-west-1.compute.amazonaws.com',
+        'NAME': 'beauty_system_db',
+        'USER': 'postgres',
+        'PASSWORD': 'rebo123',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

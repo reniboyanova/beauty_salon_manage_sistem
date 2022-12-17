@@ -1,6 +1,5 @@
 from multiselectfield import MultiSelectField
 from django.db import models
-from cloudinary.models import CloudinaryField
 
 
 from beauty_salon_manage_sistem.accounts.models import AppCustomerUser
@@ -138,10 +137,8 @@ class Procedure(models.Model):
         on_delete=models.CASCADE,
     )
 
-    # before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
-    # after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
-    before_image = CloudinaryField('before images', validators=[validate_image_size,])
-    after_image = CloudinaryField('after images', validators=[validate_image_size,])
+    before_image = models.ImageField(upload_to='before images', validators=[validate_image_size,])
+    after_image = models.ImageField(upload_to='after images', validators=[validate_image_size,])
 
     date = models.DateTimeField(auto_now_add=True,)
 
