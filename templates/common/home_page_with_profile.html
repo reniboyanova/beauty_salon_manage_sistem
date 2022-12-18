@@ -1,16 +1,20 @@
 {% extends 'common/index_page.html' %}
+{% load custom_filters %}
 {% load static %}
 {% block content %}
         <div class="logo-in-center">
             <img class="logo-size-class" src="{% static '/images/BS-logo.png' %}" alt="BeautyManagementSystem">
         </div>
-    {% if request.user.has_perm %}
+    {% if user|has_group:"Mangers" or user|has_group:"Owner"%}
         <div class="just-in-center">
             <a href="{% url 'all beauty salon procedures' %}" class="btn btn-outline-light" role="button" id="secondOrThirdButton">Last activities</a>
         </div>
     {% else %}
-    <h3 style="color: white; text-align: center; text-shadow: 1px 1px black;">
-    Ask your manager for permission to use this app!
-    </h3>
+{#    <h3 style="color: white; text-align: center; text-shadow: 1px 1px black;">#}
+{#    Ask your manager for permission to use this app!#}
+{#    </h3>#}
+         <div class="just-in-center">
+            <a href="{% url 'all beauty salon procedures' %}" class="btn btn-outline-light disabled" role="button" id="secondOrThirdButton">Last activities</a>
+        </div>
     {% endif %}
 {% endblock %}
