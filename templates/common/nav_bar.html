@@ -42,7 +42,7 @@
                                    href="{% url 'my booking hours' %}">Booked procedures</a></li>
                             {% if user|has_group:"Managers" %}
                                 <hr class="dropdown-divider">
-                                <li><a class="dropdown-item" href="{% url 'register user' %}">Register Staff</a></li>
+                                <li><a class="dropdown-item" href="{% url 'add staff' %}">Register Staff</a></li>
                                 <li><a class="dropdown-item"
                                        href="{% url 'superuser details'  pk=request.user.pk %}">Details Staffs</a></li>
                                 <li>

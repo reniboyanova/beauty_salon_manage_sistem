@@ -4,15 +4,6 @@
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
         <div class="login-register-box">
             <form method="post" action="{% url 'login user' %}">
-{#                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.username.label }}</div>#}
-{##}
-{#                <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;">{{ form.username.errors }}</div>#}
-{#                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.username }}</div>#}
-{#                                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.password.label }}</div>#}
-{##}
-{##}
-{#                <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;">{{ form.password.errors }}</div>#}
-{#                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.password }}</div>#}
                 {% for field in form %}
                     <div>
                         {% if field.label %}
