@@ -4,17 +4,28 @@
         <div class="d-md-inline-flex justify-content-center" style="padding: 20px; border: 2px solid white ;border-radius: 30px; color: white;">
         <div class="login-register-box">
             <form method="post" action="{% url 'login user' %}">
-                {% for field in form %}
-                    <div>
-                        {% if field.label %}
-                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ field.label }}</div>
-                        {% endif %}
-                        <div id="fieldsStyle">{{ field }}</div>
-                    {% if field.errors %}
-                             <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;">{{ field.errors }}</div>
-                        {% endif %}
-                    </div>
-                {% endfor %}
+            <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.username.label }}:</div>
+            <div id="fieldsStyle">{{ form.username }}</div>
+                {% if form.errors %}
+                     <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;"><i class="bi bi-exclamation-square-fill" style="padding-left: 5px; margin-right: 5px;"></i>  "Please enter a valid email!"</div>
+                {% endif %}
+                   <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ form.password.label }}:</div>
+            <div id="fieldsStyle">{{ form.password }}</div>
+                {% if form.errors %}
+                     <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;"><i class="bi bi-exclamation-square-fill" style="padding-left: 5px; margin-right: 5px;"></i>  "Please enter a valid password!"</div>
+                {% endif %}
+
+{#                {% for field in form %}#}
+{#                    <div>#}
+{#                        {% if field.label %}#}
+{#                                <div id="labelIdforFiels" style="margin-bottom: 10px; margin-top: 15px;">{{ field.label }}</div>#}
+{#                        {% endif %}#}
+{#                        <div id="fieldsStyle">{{ field }}</div>#}
+{#                    {% if field.errors %}#}
+{#                             <div class="alert alert-danger d-flex align-items-right justify-content-right h-100" role="alert" style="padding: 0;">{{ field.errors }}</div>#}
+{#                        {% endif %}#}
+{#                    </div>#}
+{#                {% endfor %}#}
                 <div><input name="next" type="hidden" value="{% url 'index page with profile' %}"></div>
                 <div><button type="submit" class="btn btn-primary" id="buttonSubmision">Log in</button></div>
                 {% csrf_token %}

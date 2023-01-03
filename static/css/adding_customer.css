@@ -27,6 +27,8 @@ input[type=text], input[type=password], input[type=number], input[type=url], inp
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px;
+    line-height: 20px;
 
 }
 
