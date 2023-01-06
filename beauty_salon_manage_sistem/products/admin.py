@@ -5,4 +5,5 @@ from beauty_salon_manage_sistem.products.models import AddProducts
 
 @admin.register(AddProducts)
 class AddProductsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['brand', 'type_of_product', 'serial_number',]
+    search_fields = ['type_of_product', 'serial_number']

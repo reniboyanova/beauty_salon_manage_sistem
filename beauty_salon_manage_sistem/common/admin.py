@@ -8,4 +8,4 @@ from beauty_salon_manage_sistem.common.models import BookingCustomerProcedure
 class BookingProcedureAdmin(admin.ModelAdmin):
     add_form = BookingForm
     list_display = ['select_date', 'select_time', 'hair_stylist', 'customer', ]
-    ordering = ['-select_date', 'select_time', ]
+    ordering = ['-select_date', 'select_time', 'hair_stylist', 'customer', ]

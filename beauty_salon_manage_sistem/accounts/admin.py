@@ -18,3 +18,4 @@ class AppBaseUserAdmin(admin.ModelAdmin):
 class AppCustomerUserAdmin(admin.ModelAdmin):
     list_display = ['first_name','last_name', 'phone_number', 'date_of_join',]
     ordering = ['first_name', '-date_of_join',]
+    search_fields = ['first_name', 'last_name', 'phone_number']
